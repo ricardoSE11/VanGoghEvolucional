@@ -42,10 +42,10 @@
             // btn_LoadImage
             // 
             this.btn_LoadImage.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_LoadImage.Location = new System.Drawing.Point(62, 320);
-            this.btn_LoadImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_LoadImage.Location = new System.Drawing.Point(83, 394);
+            this.btn_LoadImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_LoadImage.Name = "btn_LoadImage";
-            this.btn_LoadImage.Size = new System.Drawing.Size(98, 32);
+            this.btn_LoadImage.Size = new System.Drawing.Size(131, 39);
             this.btn_LoadImage.TabIndex = 0;
             this.btn_LoadImage.Text = "Load image";
             this.btn_LoadImage.UseVisualStyleBackColor = false;
@@ -54,11 +54,12 @@
             // picBox_metaImage
             // 
             this.picBox_metaImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBox_metaImage.BackgroundImage")));
+            this.picBox_metaImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBox_metaImage.InitialImage = null;
-            this.picBox_metaImage.Location = new System.Drawing.Point(62, 33);
-            this.picBox_metaImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBox_metaImage.Location = new System.Drawing.Point(83, 41);
+            this.picBox_metaImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBox_metaImage.Name = "picBox_metaImage";
-            this.picBox_metaImage.Size = new System.Drawing.Size(266, 266);
+            this.picBox_metaImage.Size = new System.Drawing.Size(355, 327);
             this.picBox_metaImage.TabIndex = 1;
             this.picBox_metaImage.TabStop = false;
             // 
@@ -67,10 +68,10 @@
             this.btn_Manhattan.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btn_Manhattan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Manhattan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Manhattan.Location = new System.Drawing.Point(394, 320);
-            this.btn_Manhattan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Manhattan.Location = new System.Drawing.Point(525, 394);
+            this.btn_Manhattan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Manhattan.Name = "btn_Manhattan";
-            this.btn_Manhattan.Size = new System.Drawing.Size(98, 33);
+            this.btn_Manhattan.Size = new System.Drawing.Size(131, 41);
             this.btn_Manhattan.TabIndex = 2;
             this.btn_Manhattan.Text = "Chino";
             this.btn_Manhattan.UseVisualStyleBackColor = false;
@@ -79,10 +80,10 @@
             // btn_Cancel
             // 
             this.btn_Cancel.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Cancel.Location = new System.Drawing.Point(230, 322);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Location = new System.Drawing.Point(307, 396);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(98, 32);
+            this.btn_Cancel.Size = new System.Drawing.Size(131, 39);
             this.btn_Cancel.TabIndex = 3;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = false;
@@ -93,10 +94,10 @@
             this.picBox_generatedImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBox_generatedImage.BackgroundImage")));
             this.picBox_generatedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBox_generatedImage.InitialImage = null;
-            this.picBox_generatedImage.Location = new System.Drawing.Point(394, 33);
-            this.picBox_generatedImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBox_generatedImage.Location = new System.Drawing.Point(525, 41);
+            this.picBox_generatedImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBox_generatedImage.Name = "picBox_generatedImage";
-            this.picBox_generatedImage.Size = new System.Drawing.Size(266, 266);
+            this.picBox_generatedImage.Size = new System.Drawing.Size(355, 327);
             this.picBox_generatedImage.TabIndex = 4;
             this.picBox_generatedImage.TabStop = false;
             // 
@@ -105,28 +106,28 @@
             this.btn_PremioNobel.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btn_PremioNobel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_PremioNobel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_PremioNobel.Location = new System.Drawing.Point(562, 322);
-            this.btn_PremioNobel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_PremioNobel.Location = new System.Drawing.Point(749, 396);
+            this.btn_PremioNobel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_PremioNobel.Name = "btn_PremioNobel";
-            this.btn_PremioNobel.Size = new System.Drawing.Size(98, 33);
+            this.btn_PremioNobel.Size = new System.Drawing.Size(131, 41);
             this.btn_PremioNobel.TabIndex = 5;
             this.btn_PremioNobel.Text = "PremioNobel";
             this.btn_PremioNobel.UseVisualStyleBackColor = false;
             // 
             // form_MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(690, 421);
+            this.ClientSize = new System.Drawing.Size(920, 518);
             this.Controls.Add(this.btn_PremioNobel);
             this.Controls.Add(this.picBox_generatedImage);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Manhattan);
             this.Controls.Add(this.picBox_metaImage);
             this.Controls.Add(this.btn_LoadImage);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form_MainWindow";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.form_MainWindow_Load);
