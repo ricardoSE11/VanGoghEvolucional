@@ -31,5 +31,10 @@ namespace Van_Gogh_Evolucional
         {
 
         }
+
+        private void btn_Manhattan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
