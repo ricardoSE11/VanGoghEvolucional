@@ -53,5 +53,10 @@ namespace Van_Gogh_Evolucional
         {
             this.picBox_metaImage.Image = null;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
