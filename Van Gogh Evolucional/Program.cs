@@ -14,6 +14,7 @@ namespace Van_Gogh_Evolucional
         [STAThread]
         static void Main()
         {
+            Console.WriteLine("Initializing application");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new form_MainWindow());

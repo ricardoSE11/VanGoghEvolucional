@@ -84,5 +84,10 @@ namespace Van_Gogh_Evolucional
         {
 
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

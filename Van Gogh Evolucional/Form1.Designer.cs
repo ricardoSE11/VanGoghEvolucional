@@ -35,16 +35,16 @@
             this.picBox_generatedImage = new System.Windows.Forms.PictureBox();
             this.btn_PremioNobel = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtbox_size = new System.Windows.Forms.TextBox();
+            this.txtb_genes = new System.Windows.Forms.TextBox();
+            this.txtb_cross = new System.Windows.Forms.TextBox();
+            this.txtb_uducks = new System.Windows.Forms.TextBox();
             this.lbl_Size = new System.Windows.Forms.Label();
             this.lbl_CrossPrcnt = new System.Windows.Forms.Label();
             this.lbl_UglyDucks = new System.Windows.Forms.Label();
             this.lbl_GenesPrcnt = new System.Windows.Forms.Label();
             this.lbl_Amount = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtb_amount = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).BeginInit();
             this.SuspendLayout();
@@ -125,33 +125,34 @@
             this.btn_Cancelar.UseVisualStyleBackColor = false;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
-            // textBox1
+            // txtbox_size
             // 
-            this.textBox1.Location = new System.Drawing.Point(563, 458);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(93, 22);
-            this.textBox1.TabIndex = 7;
+            this.txtbox_size.Location = new System.Drawing.Point(563, 458);
+            this.txtbox_size.Name = "txtbox_size";
+            this.txtbox_size.Size = new System.Drawing.Size(93, 22);
+            this.txtbox_size.TabIndex = 7;
             // 
-            // textBox2
+            // txtb_genes
             // 
-            this.textBox2.Location = new System.Drawing.Point(591, 558);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(65, 22);
-            this.textBox2.TabIndex = 8;
+            this.txtb_genes.Location = new System.Drawing.Point(591, 558);
+            this.txtb_genes.Name = "txtb_genes";
+            this.txtb_genes.Size = new System.Drawing.Size(65, 22);
+            this.txtb_genes.TabIndex = 8;
             // 
-            // textBox3
+            // txtb_cross
             // 
-            this.textBox3.Location = new System.Drawing.Point(812, 461);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(68, 22);
-            this.textBox3.TabIndex = 9;
+            this.txtb_cross.Location = new System.Drawing.Point(812, 461);
+            this.txtb_cross.Name = "txtb_cross";
+            this.txtb_cross.Size = new System.Drawing.Size(68, 22);
+            this.txtb_cross.TabIndex = 9;
+            this.txtb_cross.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox4
+            // txtb_uducks
             // 
-            this.textBox4.Location = new System.Drawing.Point(829, 512);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(51, 22);
-            this.textBox4.TabIndex = 10;
+            this.txtb_uducks.Location = new System.Drawing.Point(829, 512);
+            this.txtb_uducks.Name = "txtb_uducks";
+            this.txtb_uducks.Size = new System.Drawing.Size(51, 22);
+            this.txtb_uducks.TabIndex = 10;
             // 
             // lbl_Size
             // 
@@ -199,12 +200,12 @@
             this.lbl_Amount.TabIndex = 15;
             this.lbl_Amount.Text = "Amount";
             // 
-            // textBox5
+            // txtb_amount
             // 
-            this.textBox5.Location = new System.Drawing.Point(585, 509);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(71, 22);
-            this.textBox5.TabIndex = 16;
+            this.txtb_amount.Location = new System.Drawing.Point(585, 509);
+            this.txtb_amount.Name = "txtb_amount";
+            this.txtb_amount.Size = new System.Drawing.Size(71, 22);
+            this.txtb_amount.TabIndex = 16;
             // 
             // form_MainWindow
             // 
@@ -213,16 +214,16 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1075, 664);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtb_amount);
             this.Controls.Add(this.lbl_Amount);
             this.Controls.Add(this.lbl_GenesPrcnt);
             this.Controls.Add(this.lbl_UglyDucks);
             this.Controls.Add(this.lbl_CrossPrcnt);
             this.Controls.Add(this.lbl_Size);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtb_uducks);
+            this.Controls.Add(this.txtb_cross);
+            this.Controls.Add(this.txtb_genes);
+            this.Controls.Add(this.txtbox_size);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_PremioNobel);
             this.Controls.Add(this.picBox_generatedImage);
@@ -248,16 +249,16 @@
         private System.Windows.Forms.PictureBox picBox_generatedImage;
         private System.Windows.Forms.Button btn_PremioNobel;
         private System.Windows.Forms.Button btn_Cancelar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtbox_size;
+        private System.Windows.Forms.TextBox txtb_genes;
+        private System.Windows.Forms.TextBox txtb_cross;
+        private System.Windows.Forms.TextBox txtb_uducks;
         private System.Windows.Forms.Label lbl_Size;
         private System.Windows.Forms.Label lbl_CrossPrcnt;
         private System.Windows.Forms.Label lbl_UglyDucks;
         private System.Windows.Forms.Label lbl_GenesPrcnt;
         private System.Windows.Forms.Label lbl_Amount;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtb_amount;
     }
 }
 
