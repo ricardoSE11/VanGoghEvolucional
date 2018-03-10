@@ -32,9 +32,9 @@
             this.btn_LoadImage = new System.Windows.Forms.Button();
             this.picBox_metaImage = new System.Windows.Forms.PictureBox();
             this.btn_Manhattan = new System.Windows.Forms.Button();
-            this.btn_Cancel = new System.Windows.Forms.Button();
             this.picBox_generatedImage = new System.Windows.Forms.PictureBox();
             this.btn_PremioNobel = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,7 @@
             this.picBox_metaImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBox_metaImage.Name = "picBox_metaImage";
             this.picBox_metaImage.Size = new System.Drawing.Size(355, 327);
+            this.picBox_metaImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox_metaImage.TabIndex = 1;
             this.picBox_metaImage.TabStop = false;
             // 
@@ -73,21 +74,9 @@
             this.btn_Manhattan.Name = "btn_Manhattan";
             this.btn_Manhattan.Size = new System.Drawing.Size(131, 41);
             this.btn_Manhattan.TabIndex = 2;
-            this.btn_Manhattan.Text = "Chino";
+            this.btn_Manhattan.Text = "Manhattan";
             this.btn_Manhattan.UseVisualStyleBackColor = false;
             this.btn_Manhattan.Click += new System.EventHandler(this.btn_Manhattan_Click);
-            // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Cancel.Location = new System.Drawing.Point(307, 396);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(131, 39);
-            this.btn_Cancel.TabIndex = 3;
-            this.btn_Cancel.Text = "Cancel";
-            this.btn_Cancel.UseVisualStyleBackColor = false;
-            this.btn_Cancel.Click += new System.EventHandler(this.button1_Click);
             // 
             // picBox_generatedImage
             // 
@@ -113,6 +102,18 @@
             this.btn_PremioNobel.TabIndex = 5;
             this.btn_PremioNobel.Text = "PremioNobel";
             this.btn_PremioNobel.UseVisualStyleBackColor = false;
+            this.btn_PremioNobel.Click += new System.EventHandler(this.btn_PremioNobel_Click);
+            // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_Cancelar.Location = new System.Drawing.Point(307, 394);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(131, 39);
+            this.btn_Cancelar.TabIndex = 6;
+            this.btn_Cancelar.Text = "Cancel";
+            this.btn_Cancelar.UseVisualStyleBackColor = false;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // form_MainWindow
             // 
@@ -121,9 +122,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(920, 518);
+            this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_PremioNobel);
             this.Controls.Add(this.picBox_generatedImage);
-            this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Manhattan);
             this.Controls.Add(this.picBox_metaImage);
             this.Controls.Add(this.btn_LoadImage);
@@ -142,9 +143,9 @@
         private System.Windows.Forms.Button btn_LoadImage;
         private System.Windows.Forms.PictureBox picBox_metaImage;
         private System.Windows.Forms.Button btn_Manhattan;
-        private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.PictureBox picBox_generatedImage;
         private System.Windows.Forms.Button btn_PremioNobel;
+        private System.Windows.Forms.Button btn_Cancelar;
     }
 }
 

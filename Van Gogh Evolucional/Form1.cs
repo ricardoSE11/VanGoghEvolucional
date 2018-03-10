@@ -19,6 +19,13 @@ namespace Van_Gogh_Evolucional
 
         private void btn_LoadImage_Click(object sender, EventArgs e)
         {
+            OpenFileDialog ofile = new OpenFileDialog();
+            ofile.Filter = "Image File (*.bmp,*.jpg,*.png|*.bmp;*.jpg;*.png";
+            if (DialogResult.OK == ofile.ShowDialog())
+            {
+                //picBox_metaImage.BackgroundImage.Dispose();
+                this.picBox_metaImage.Image = new Bitmap(ofile.FileName);
+            }
 
         }
 
@@ -27,14 +34,24 @@ namespace Van_Gogh_Evolucional
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /*private void btn_Cancel(object sender, EventArgs e)
         {
-
-        }
+            this.picBox_metaImage.Image = null;
+        }*/
 
         private void btn_Manhattan_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_PremioNobel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.picBox_metaImage.Image = null;
         }
     }
 }
