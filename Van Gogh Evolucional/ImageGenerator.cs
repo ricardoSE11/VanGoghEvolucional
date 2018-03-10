@@ -58,6 +58,7 @@ namespace Van_Gogh_Evolucional
                 Bitmap actual_Image = generateRandomImage();
                 randomImages.Add(actual_Image);
             }
+            return randomImages;
             Console.WriteLine(amountOfImages + " images generated.");
         }
     }
