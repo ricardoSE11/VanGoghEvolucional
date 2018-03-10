@@ -211,7 +211,7 @@
             this.Controls.Add(this.btn_LoadImage);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form_MainWindow";
-            this.Text = "Form1";
+            this.Text = "Van Gogh Evolucional";
             this.Load += new System.EventHandler(this.form_MainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).EndInit();
