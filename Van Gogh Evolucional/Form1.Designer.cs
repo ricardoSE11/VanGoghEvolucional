@@ -43,6 +43,8 @@
             this.lbl_CrossPrcnt = new System.Windows.Forms.Label();
             this.lbl_UglyDucks = new System.Windows.Forms.Label();
             this.lbl_GenesPrcnt = new System.Windows.Forms.Label();
+            this.lbl_Amount = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +134,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(591, 509);
+            this.textBox2.Location = new System.Drawing.Point(591, 558);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(65, 22);
             this.textBox2.TabIndex = 8;
@@ -182,11 +184,27 @@
             // lbl_GenesPrcnt
             // 
             this.lbl_GenesPrcnt.AutoSize = true;
-            this.lbl_GenesPrcnt.Location = new System.Drawing.Point(522, 512);
+            this.lbl_GenesPrcnt.Location = new System.Drawing.Point(522, 561);
             this.lbl_GenesPrcnt.Name = "lbl_GenesPrcnt";
             this.lbl_GenesPrcnt.Size = new System.Drawing.Size(62, 17);
             this.lbl_GenesPrcnt.TabIndex = 14;
             this.lbl_GenesPrcnt.Text = "Genes%";
+            // 
+            // lbl_Amount
+            // 
+            this.lbl_Amount.AutoSize = true;
+            this.lbl_Amount.Location = new System.Drawing.Point(522, 509);
+            this.lbl_Amount.Name = "lbl_Amount";
+            this.lbl_Amount.Size = new System.Drawing.Size(56, 17);
+            this.lbl_Amount.TabIndex = 15;
+            this.lbl_Amount.Text = "Amount";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(585, 509);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(71, 22);
+            this.textBox5.TabIndex = 16;
             // 
             // form_MainWindow
             // 
@@ -194,7 +212,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(928, 559);
+            this.ClientSize = new System.Drawing.Size(1075, 664);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.lbl_Amount);
             this.Controls.Add(this.lbl_GenesPrcnt);
             this.Controls.Add(this.lbl_UglyDucks);
             this.Controls.Add(this.lbl_CrossPrcnt);
@@ -236,6 +256,8 @@
         private System.Windows.Forms.Label lbl_CrossPrcnt;
         private System.Windows.Forms.Label lbl_UglyDucks;
         private System.Windows.Forms.Label lbl_GenesPrcnt;
+        private System.Windows.Forms.Label lbl_Amount;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
 
