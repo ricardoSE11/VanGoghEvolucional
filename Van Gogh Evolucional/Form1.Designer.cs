@@ -46,17 +46,15 @@
             this.lbl_Amount = new System.Windows.Forms.Label();
             this.txtb_amount = new System.Windows.Forms.TextBox();
             this.btn_test = new System.Windows.Forms.Button();
-            this.picBox_test = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_test)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_LoadImage
             // 
             this.btn_LoadImage.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btn_LoadImage.Location = new System.Drawing.Point(62, 320);
-            this.btn_LoadImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_LoadImage.Margin = new System.Windows.Forms.Padding(2);
             this.btn_LoadImage.Name = "btn_LoadImage";
             this.btn_LoadImage.Size = new System.Drawing.Size(98, 32);
             this.btn_LoadImage.TabIndex = 0;
@@ -70,7 +68,7 @@
             this.picBox_metaImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBox_metaImage.InitialImage = null;
             this.picBox_metaImage.Location = new System.Drawing.Point(62, 33);
-            this.picBox_metaImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBox_metaImage.Margin = new System.Windows.Forms.Padding(2);
             this.picBox_metaImage.Name = "picBox_metaImage";
             this.picBox_metaImage.Size = new System.Drawing.Size(266, 266);
             this.picBox_metaImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,7 +81,7 @@
             this.btn_Manhattan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Manhattan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Manhattan.Location = new System.Drawing.Point(394, 320);
-            this.btn_Manhattan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Manhattan.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Manhattan.Name = "btn_Manhattan";
             this.btn_Manhattan.Size = new System.Drawing.Size(98, 33);
             this.btn_Manhattan.TabIndex = 2;
@@ -97,7 +95,7 @@
             this.picBox_generatedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBox_generatedImage.InitialImage = null;
             this.picBox_generatedImage.Location = new System.Drawing.Point(394, 33);
-            this.picBox_generatedImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBox_generatedImage.Margin = new System.Windows.Forms.Padding(2);
             this.picBox_generatedImage.Name = "picBox_generatedImage";
             this.picBox_generatedImage.Size = new System.Drawing.Size(266, 266);
             this.picBox_generatedImage.TabIndex = 4;
@@ -109,7 +107,7 @@
             this.btn_PremioNobel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_PremioNobel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_PremioNobel.Location = new System.Drawing.Point(562, 322);
-            this.btn_PremioNobel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_PremioNobel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_PremioNobel.Name = "btn_PremioNobel";
             this.btn_PremioNobel.Size = new System.Drawing.Size(98, 33);
             this.btn_PremioNobel.TabIndex = 5;
@@ -121,7 +119,7 @@
             // 
             this.btn_Cancelar.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btn_Cancelar.Location = new System.Drawing.Point(230, 320);
-            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(98, 32);
             this.btn_Cancelar.TabIndex = 6;
@@ -132,7 +130,7 @@
             // txtbox_size
             // 
             this.txtbox_size.Location = new System.Drawing.Point(422, 372);
-            this.txtbox_size.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_size.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_size.Name = "txtbox_size";
             this.txtbox_size.Size = new System.Drawing.Size(71, 20);
             this.txtbox_size.TabIndex = 7;
@@ -140,7 +138,7 @@
             // txtb_genes
             // 
             this.txtb_genes.Location = new System.Drawing.Point(443, 453);
-            this.txtb_genes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_genes.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_genes.Name = "txtb_genes";
             this.txtb_genes.Size = new System.Drawing.Size(50, 20);
             this.txtb_genes.TabIndex = 8;
@@ -148,7 +146,7 @@
             // txtb_cross
             // 
             this.txtb_cross.Location = new System.Drawing.Point(609, 375);
-            this.txtb_cross.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_cross.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_cross.Name = "txtb_cross";
             this.txtb_cross.Size = new System.Drawing.Size(52, 20);
             this.txtb_cross.TabIndex = 9;
@@ -157,7 +155,7 @@
             // txtb_uducks
             // 
             this.txtb_uducks.Location = new System.Drawing.Point(622, 416);
-            this.txtb_uducks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_uducks.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_uducks.Name = "txtb_uducks";
             this.txtb_uducks.Size = new System.Drawing.Size(39, 20);
             this.txtb_uducks.TabIndex = 10;
@@ -216,7 +214,7 @@
             // txtb_amount
             // 
             this.txtb_amount.Location = new System.Drawing.Point(439, 414);
-            this.txtb_amount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_amount.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_amount.Name = "txtb_amount";
             this.txtb_amount.Size = new System.Drawing.Size(54, 20);
             this.txtb_amount.TabIndex = 16;
@@ -231,18 +229,6 @@
             this.btn_test.UseVisualStyleBackColor = true;
             this.btn_test.Click += new System.EventHandler(this.button1_Click);
             // 
-            // picBox_test
-            // 
-            this.picBox_test.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBox_test.InitialImage = null;
-            this.picBox_test.Location = new System.Drawing.Point(710, 309);
-            this.picBox_test.Margin = new System.Windows.Forms.Padding(2);
-            this.picBox_test.Name = "picBox_test";
-            this.picBox_test.Size = new System.Drawing.Size(220, 236);
-            this.picBox_test.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBox_test.TabIndex = 18;
-            this.picBox_test.TabStop = false;
-            // 
             // form_MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +236,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(941, 556);
-            this.Controls.Add(this.picBox_test);
             this.Controls.Add(this.btn_test);
             this.Controls.Add(this.txtb_amount);
             this.Controls.Add(this.lbl_Amount);
@@ -268,13 +253,12 @@
             this.Controls.Add(this.btn_Manhattan);
             this.Controls.Add(this.picBox_metaImage);
             this.Controls.Add(this.btn_LoadImage);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "form_MainWindow";
             this.Text = "Van Gogh Evolucional";
             this.Load += new System.EventHandler(this.form_MainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_test)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,7 +283,6 @@
         private System.Windows.Forms.Label lbl_Amount;
         private System.Windows.Forms.TextBox txtb_amount;
         private System.Windows.Forms.Button btn_test;
-        private System.Windows.Forms.PictureBox picBox_test;
     }
 }
 
