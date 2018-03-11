@@ -13,11 +13,7 @@ namespace Van_Gogh_Evolucional
         //Constructor de la clase
         public ImageGenerator() //default
         {
-        }
-
-        public ImageGenerator(int amountOfImages)
-        {
-            Console.WriteLine("- Instantiating the Image Generator with:" + amountOfImages + " -");
+            Console.WriteLine("- Instantiating the Image Generator -");
         }
 
         //Generates a randomImage
@@ -49,18 +45,17 @@ namespace Van_Gogh_Evolucional
             return randomImage;
         }
 
-        public ArrayList generateRandomImages(int amountOfImages)
+        public List<Bitmap> generateRandomImages(int amountOfImages)
         {
             Console.WriteLine("Generating: " + amountOfImages + " images.");
-            ArrayList randomImages = new ArrayList();
+            List<Bitmap> randomImages = new List<Bitmap>();
             for (int i = 0; i < amountOfImages; i++)
             {
                 Bitmap actual_Image = generateRandomImage();
                 randomImages.Add(actual_Image);
             }
             Console.WriteLine(amountOfImages + " images generated.");
-            return randomImages;
-            
+            return randomImages;  
         }
     }
 }
