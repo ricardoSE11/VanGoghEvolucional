@@ -9,4 +9,5 @@ namespace Van_Gogh_Evolucional
     class HistogramColor
     {
     }
+    //Pos no sirve
 }
