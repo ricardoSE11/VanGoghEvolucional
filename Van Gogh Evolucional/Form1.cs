@@ -41,7 +41,11 @@ namespace Van_Gogh_Evolucional
 
         private void btn_Manhattan_Click(object sender, EventArgs e)
         {
-
+            int size = int.Parse(txtbox_size.Text);
+            int amount = int.Parse(txtb_amount.Text);
+            int cross = int.Parse(txtb_cross.Text);
+            int genes = int.Parse(txtb_genes.Text);
+            int mutation = int.Parse(txtb_mutation.Text);
         }
 
         private void btn_PremioNobel_Click(object sender, EventArgs e)
@@ -53,7 +57,7 @@ namespace Van_Gogh_Evolucional
             Bitmap randomImage = new Bitmap(width, height);
             //Random number
             Random rand = new Random();
-
+            
             //Create random pixels
             for (int y = 0; y < height; y++)
             {

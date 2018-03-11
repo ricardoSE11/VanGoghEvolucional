@@ -45,6 +45,8 @@
             this.lbl_GenesPrcnt = new System.Windows.Forms.Label();
             this.lbl_Amount = new System.Windows.Forms.Label();
             this.txtb_amount = new System.Windows.Forms.TextBox();
+            this.lbl_mutationPrcnt = new System.Windows.Forms.Label();
+            this.txtb_mutation = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).BeginInit();
             this.SuspendLayout();
@@ -207,6 +209,22 @@
             this.txtb_amount.Size = new System.Drawing.Size(71, 22);
             this.txtb_amount.TabIndex = 16;
             // 
+            // lbl_mutationPrcnt
+            // 
+            this.lbl_mutationPrcnt.AutoSize = true;
+            this.lbl_mutationPrcnt.Location = new System.Drawing.Point(749, 561);
+            this.lbl_mutationPrcnt.Name = "lbl_mutationPrcnt";
+            this.lbl_mutationPrcnt.Size = new System.Drawing.Size(74, 17);
+            this.lbl_mutationPrcnt.TabIndex = 17;
+            this.lbl_mutationPrcnt.Text = "Mutation%";
+            // 
+            // txtb_mutation
+            // 
+            this.txtb_mutation.Location = new System.Drawing.Point(829, 561);
+            this.txtb_mutation.Name = "txtb_mutation";
+            this.txtb_mutation.Size = new System.Drawing.Size(51, 22);
+            this.txtb_mutation.TabIndex = 18;
+            // 
             // form_MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -214,6 +232,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1075, 664);
+            this.Controls.Add(this.txtb_mutation);
+            this.Controls.Add(this.lbl_mutationPrcnt);
             this.Controls.Add(this.txtb_amount);
             this.Controls.Add(this.lbl_Amount);
             this.Controls.Add(this.lbl_GenesPrcnt);
@@ -259,6 +279,8 @@
         private System.Windows.Forms.Label lbl_GenesPrcnt;
         private System.Windows.Forms.Label lbl_Amount;
         private System.Windows.Forms.TextBox txtb_amount;
+        private System.Windows.Forms.Label lbl_mutationPrcnt;
+        private System.Windows.Forms.TextBox txtb_mutation;
     }
 }
 
