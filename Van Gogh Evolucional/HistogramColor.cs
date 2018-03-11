@@ -16,7 +16,7 @@ namespace Van_Gogh_Evolucional
        
         //Constructor de la clase
         public HistogramColor()
-        {
+        {//comentario de prueba
         }
         public HistogramColor(int amountOfImages)
         {
