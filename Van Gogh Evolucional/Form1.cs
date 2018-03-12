@@ -117,7 +117,11 @@ namespace Van_Gogh_Evolucional
             ImageGenerator imgGenerator = new ImageGenerator();
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population);
-            
+            HistogramColor colorHistograms = new HistogramColor();
+            for (int i = 0; i < population.Count; i++)
+            {
+                colorHistograms.getColorHistogram(population[i]);
+            }
         }
     }
 }
