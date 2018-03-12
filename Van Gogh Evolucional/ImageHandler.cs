@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Van_Gogh_Evolucional
 {
     class ImageHandler
-    {
+    {//Comentario de prueba 
         //Constructor
         public ImageHandler()
         {
