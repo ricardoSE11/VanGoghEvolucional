@@ -93,5 +93,11 @@ namespace Van_Gogh_Evolucional
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HistogramColor test = new HistogramColor();
+            test.ExamineImage((Bitmap)picBox_metaImage.Image);
+        }
     }
 }
