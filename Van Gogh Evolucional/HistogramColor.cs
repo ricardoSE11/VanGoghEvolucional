@@ -54,45 +54,45 @@ namespace Van_Gogh_Evolucional
             Console.WriteLine("GlobalHistograms ADD\n");
             //HistogramR test
 
-            if (histogramsRed.Count == 0)
-            {
-                Console.WriteLine("Null\n");
-            }
-            else
-            {
-                for (int a = 0; a < histogramsRed.Count; a++)
-                {
-                    Console.WriteLine("Histogram Red" + "\n");
+            //if (histogramsred.count == 0)
+            //{
+            //    console.writeline("null\n");
+            //}
+            //else
+            //{
+            //    for (int a = 0; a < histogramsred.count; a++)
+            //    {
+            //        console.writeline("histogram red" + "\n");
 
-                    for (int b = 0; b < histogramsRed[a].Length; b++)
-                    {
+            //        for (int b = 0; b < histogramsred[a].length; b++)
+            //        {
 
-                        Console.WriteLine(b + " " + histogramsRed[a][b] + "\n");
+            //            console.writeline(b + " " + histogramsred[a][b] + "\n");
 
-                    }
-                }
-                for (int a = 0; a < histogramsGreen.Count; a++)
-                {
-                    Console.WriteLine("Histogram Green" + "\n");
-                    for (int b = 0; b < histogramsGreen[a].Length; b++)
-                    {
+            //        }
+            //    }
+            //    for (int a = 0; a < histogramsgreen.count; a++)
+            //    {
+            //        console.writeline("histogram green" + "\n");
+            //        for (int b = 0; b < histogramsgreen[a].length; b++)
+            //        {
 
-                        Console.WriteLine(b + " " + histogramsGreen[a][b] + "\n");
+            //            console.writeline(b + " " + histogramsgreen[a][b] + "\n");
 
-                    }
-                }
-                for (int a = 0; a < histogramsBlue.Count; a++)
-                {
-                    Console.WriteLine("Histogram Blue" + "\n");
-                    for (int b = 0; b < histogramsBlue[a].Length; b++)
-                    {
+            //        }
+            //    }
+            //    for (int a = 0; a < histogramsblue.count; a++)
+            //    {
+            //        console.writeline("histogram blue" + "\n");
+            //        for (int b = 0; b < histogramsblue[a].length; b++)
+            //        {
 
-                        Console.WriteLine(b + " " + histogramsBlue[a][b] + "\n");
+            //            console.writeline(b + " " + histogramsblue[a][b] + "\n");
 
-                    }
-                }
+            //        }
+            //    }
 
-            }
+            //}
 
         }
     }
