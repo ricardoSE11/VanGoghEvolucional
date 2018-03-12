@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Histogram.cs" />
+    <Compile Include="ImageHandler.cs" />
     <Compile Include="PopulationManhattanDistance.cs" />
     <Compile Include="HistogramColor.cs" />
     <Compile Include="ImageGenerator.cs" />
