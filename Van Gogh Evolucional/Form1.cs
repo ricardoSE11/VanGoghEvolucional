@@ -47,6 +47,11 @@ namespace Van_Gogh_Evolucional
             int cross = int.Parse(txtb_cross.Text);
             int genes = int.Parse(txtb_genes.Text);
             int mutation = int.Parse(txtb_mutation.Text);
+
+            ImageHandler imgProcessor = new ImageHandler();
+            Bitmap resizedImg = imgProcessor.ResizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640, 320 , 1080);
+            picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBox_generatedImage.Image = resizedImg;
         }
 
         private void btn_PremioNobel_Click(object sender, EventArgs e)
