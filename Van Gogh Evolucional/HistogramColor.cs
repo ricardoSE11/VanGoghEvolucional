@@ -22,7 +22,9 @@ namespace Van_Gogh_Evolucional
         {
             Console.WriteLine("- Instantiating the HistogramColor with:");
         }
-        public void ExamineImage(Bitmap Image)
+
+        //Antes era ExamineImage
+        public void getColorHistogram(Bitmap Image)
         {
             //Variables
             int red = 0;

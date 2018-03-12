@@ -41,13 +41,6 @@ namespace Van_Gogh_Evolucional
 
         private void btn_Manhattan_Click(object sender, EventArgs e)
         {
-            //Generation parameters.
-            int size = int.Parse(txtbox_size.Text);
-            int amount = int.Parse(txtb_amount.Text);
-            int cross = int.Parse(txtb_cross.Text);
-            int genes = int.Parse(txtb_genes.Text);
-            int mutation = int.Parse(txtb_mutation.Text);
-
             ImageHandler imgProcessor = new ImageHandler();
             Bitmap resizedImg = imgProcessor.ResizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640, 320 , 1080);
             picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -103,7 +96,28 @@ namespace Van_Gogh_Evolucional
         private void button1_Click(object sender, EventArgs e)
         {
             HistogramColor test = new HistogramColor();
-            test.ExamineImage((Bitmap)picBox_metaImage.Image);
+            test.getColorHistogram((Bitmap)picBox_metaImage.Image);
+        }
+
+        private void txtbox_size_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Generate_Click(object sender, EventArgs e)
+        {
+            //Generation parameters.
+            int size = int.Parse(txtbox_size.Text);
+            int amount = int.Parse(txtb_amount.Text);
+            int cross = int.Parse(txtb_cross.Text);
+            int genes = int.Parse(txtb_genes.Text);
+            int mutation = int.Parse(txtb_mutation.Text);
+            int uglyDucks = int.Parse(txtb_uducks.Text);
+
+            ImageGenerator imgGenerator = new ImageGenerator();
+            List<Bitmap> population = imgGenerator.generateRandomImages(size);
+            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population);
+            
         }
     }
 }
