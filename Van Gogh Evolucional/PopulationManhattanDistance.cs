@@ -11,14 +11,15 @@ namespace Van_Gogh_Evolucional
     {
 
         //Variables
-        public List<int[]> manhattanListRed = new List<int[]>();
-        public List<int[]> manhattanListGreen = new List<int[]>();
-        public List<int[]> manhattanListBlue = new List<int[]>();
+        public List<int> manhattanListRed = new List<int>();
+        public List<int> manhattanListGreen = new List<int>();
+        public List<int> manhattanListBlue = new List<int>();
         //Class contructor 
         public PopulationManhattanDistance()
         {
         }
 
+        //Procedimiento que saca las distancias manhattan del RGB de los histogramas de la imagen meta y las imagenes generadas.
         public void manhattanDistance(int[] vector1R, int[] vector1G, int[] vector1B,int[] vector2R, int[] vector2G, int[] vector2B)
         {
             int distanceRed=0;
@@ -31,6 +32,11 @@ namespace Van_Gogh_Evolucional
                 distanceGreen += Math.Abs(vector1G[i] - vector2G[i]);
                 distanceBlue += Math.Abs(vector1B[i] - vector2B[i]);
             }
+
+            //Aqui se agrega cada distancia manhattan conforme a su color,RGB, en su respectiva lista
+            manhattanListRed.Add(distanceRed);
+            manhattanListGreen.Add(distanceGreen);
+            manhattanListBlue.Add(distanceBlue);
         }
     }
 }
