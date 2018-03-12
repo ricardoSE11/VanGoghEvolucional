@@ -41,6 +41,7 @@ namespace Van_Gogh_Evolucional
 
         private void btn_Manhattan_Click(object sender, EventArgs e)
         {
+            //Generation parameters.
             int size = int.Parse(txtbox_size.Text);
             int amount = int.Parse(txtb_amount.Text);
             int cross = int.Parse(txtb_cross.Text);
