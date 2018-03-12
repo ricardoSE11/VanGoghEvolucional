@@ -31,9 +31,16 @@ namespace Van_Gogh_Evolucional
                 " , " + "Genes Precentage: " + genesPrcnt + " , " + "Ugly ducks: " + uglyDucks);
         }
 
-        public void binaryCross(Bitmap imageOne , Bitmap imageTwo)
+        public Bitmap imageCross(Bitmap imageOne , Bitmap imageTwo)
         {
             //Lógica implacable de cruce
+            return imageOne; //mientras tanto
+        }
+
+        public Bitmap imageMutation(Bitmap imageOne, Bitmap imageTwo)
+        {
+            //Lógica implacable de mutación
+            return imageOne; //mientras tanto
         }
     }
 }

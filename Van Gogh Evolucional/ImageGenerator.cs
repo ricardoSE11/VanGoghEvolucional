@@ -12,7 +12,7 @@ namespace Van_Gogh_Evolucional
     {
         //Constructor de la clase
         public ImageGenerator() //default
-        {//Comentario de prueba
+        {
             Console.WriteLine("- Instantiating the Image Generator -");
         }
 
