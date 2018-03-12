@@ -11,21 +11,23 @@ namespace Van_Gogh_Evolucional
     class VariabilityChamber
     {
         //Atributes
+        List<Bitmap> population;
         int cross_prcnt;
         int mutation_prcnt;
         int genes_prcnt;
         int ugly_Ducks;
 
         //Constructors
-        VariabilityChamber()
+        public VariabilityChamber()
         {}
 
-        VariabilityChamber(int crossPrcnt, int mutationPrcnt, int genesPrcnt, int uglyDucks)
+        public VariabilityChamber(int crossPrcnt, int mutationPrcnt, int genesPrcnt, int uglyDucks , List<Bitmap> imgPopulation)
         {
             cross_prcnt = crossPrcnt;
             mutation_prcnt = mutationPrcnt;
             genes_prcnt = genesPrcnt;
             ugly_Ducks = uglyDucks;
+            population = imgPopulation;
             Console.WriteLine("Creating a Variability Chamber with the following values: " 
                 + "Cross Percentage: " + crossPrcnt + " , " + "Mutation Percentage: " + mutationPrcnt +
                 " , " + "Genes Precentage: " + genesPrcnt + " , " + "Ugly ducks: " + uglyDucks);

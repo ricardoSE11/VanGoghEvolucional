@@ -42,6 +42,7 @@ namespace Van_Gogh_Evolucional
                     randomImage.SetPixel(x, y, Color.FromArgb(a, r, g, b));
                 }
             }//end of For 
+            Console.WriteLine("Generating a randomw image.");
             return randomImage;
         }
 
