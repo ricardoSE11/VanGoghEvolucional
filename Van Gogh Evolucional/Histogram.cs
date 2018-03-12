@@ -12,6 +12,6 @@ namespace Van_Gogh_Evolucional
         public Histogram()
         {
         }
-
+        //Metodo propio
     }
 }
