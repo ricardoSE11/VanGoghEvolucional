@@ -18,10 +18,6 @@ namespace Van_Gogh_Evolucional
         public HistogramColor()
         {
         }
-        public HistogramColor(int amountOfImages)
-        {
-            Console.WriteLine("- Instantiating the HistogramColor with:");
-        }
 
         //Antes era ExamineImage
         public void getColorHistogram(Bitmap Image)
@@ -47,11 +43,11 @@ namespace Van_Gogh_Evolucional
                     histogramBlue[blue] += 1;
                 }
             }
-            Console.Write("Histograms creates\n");
+            Console.WriteLine("Histograms created for image number: " + histogramsRed.Count + "." );
             histogramsRed.Add(histogramRed);
             histogramsGreen.Add(histogramGreen);
             histogramsBlue.Add(histogramBlue);
-            Console.WriteLine("GlobalHistograms ADD\n");
+            Console.WriteLine("GlobalHistograms added for image number: " + histogramsRed.Count + ".");
             //HistogramR test
 
             //if (histogramsred.count == 0)
