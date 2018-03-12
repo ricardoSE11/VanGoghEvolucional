@@ -41,6 +41,7 @@ namespace Van_Gogh_Evolucional
 
         private void btn_Manhattan_Click(object sender, EventArgs e)
         {
+            //Resized image placed here to check functionality.
             ImageHandler imgProcessor = new ImageHandler();
             Bitmap resizedImg = imgProcessor.ResizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640, 320 , 1080);
             picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
