@@ -43,7 +43,7 @@ namespace Van_Gogh_Evolucional
         {
             //Resized image placed here to check functionality.
             ImageHandler imgProcessor = new ImageHandler();
-            Bitmap resizedImg = imgProcessor.ResizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640, 320 , 1080);
+            Bitmap resizedImg = imgProcessor.ResizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640 , 320 , 1080);
             picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
             picBox_generatedImage.Image = resizedImg;
         }
@@ -118,11 +118,8 @@ namespace Van_Gogh_Evolucional
             ImageGenerator imgGenerator = new ImageGenerator();
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population);
-            HistogramColor colorHistograms = new HistogramColor();
-            for (int i = 0; i < population.Count; i++)
-            {
-                colorHistograms.getColorHistogram(population[i]);
-            }
+
+
         }
     }
 }
