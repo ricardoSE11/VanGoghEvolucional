@@ -17,7 +17,7 @@ namespace Van_Gogh_Evolucional
             Console.WriteLine("Instatiating an ImageProcessor.");
         }
 
-        public Bitmap ResizeImage(Image image, int width, int height)
+        public Bitmap resizeImage(Image image, int width, int height)
         {
             var destRect = new Rectangle(0, 0, width, height);
             var resizedImage = new Bitmap(width, height);
@@ -42,7 +42,7 @@ namespace Van_Gogh_Evolucional
             return resizedImage;
         }
 
-        public Bitmap ResizeImgWithChoosingQuality(Bitmap image, int maxWidth, int maxHeight, int quality)
+        public Bitmap resizeImgWithChoosingQuality(Bitmap image, int maxWidth, int maxHeight, int quality)
         {
             // Get the image's original width and height
             int originalWidth = image.Width;

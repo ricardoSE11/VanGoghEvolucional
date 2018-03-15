@@ -43,7 +43,7 @@ namespace Van_Gogh_Evolucional
         {
             //Resized image placed here to check functionality.
             ImageHandler imgProcessor = new ImageHandler();
-            Bitmap resizedImg = imgProcessor.ResizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640 , 320 , 1080);
+            Bitmap resizedImg = imgProcessor.resizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640 , 320 , 1080);
             picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
             picBox_generatedImage.Image = resizedImg;
         }
@@ -96,8 +96,7 @@ namespace Van_Gogh_Evolucional
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HistogramColor test = new HistogramColor();
-            test.getColorHistogram((Bitmap)picBox_metaImage.Image);
+
         }
 
         private void txtbox_size_TextChanged(object sender, EventArgs e)
