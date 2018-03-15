@@ -33,6 +33,8 @@ namespace Van_Gogh_Evolucional
                 " , " + "Genes Precentage: " + genesPrcnt + " , " + "Ugly ducks: " + uglyDucks);
         }
 
+
+
         public Bitmap imageCross(Bitmap imageOne , Bitmap imageTwo)
         {
             //Lógica implacable de cruce
