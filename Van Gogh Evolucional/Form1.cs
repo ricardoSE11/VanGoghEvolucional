@@ -44,6 +44,7 @@ namespace Van_Gogh_Evolucional
             //Resized image placed here to check functionality.
             ImageHandler imgProcessor = new ImageHandler();
             Bitmap resizedImg = imgProcessor.resizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640 , 320 , 1080);
+            resizedImg = imgProcessor.blurFilter(resizedImg, 5);
             picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
             picBox_generatedImage.Image = resizedImg;
         }
