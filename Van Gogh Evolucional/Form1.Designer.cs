@@ -47,7 +47,6 @@
             this.txtb_amount = new System.Windows.Forms.TextBox();
             this.lbl_mutationPrcnt = new System.Windows.Forms.Label();
             this.txtb_mutation = new System.Windows.Forms.TextBox();
-            this.btn_Test = new System.Windows.Forms.Button();
             this.btn_Generate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).BeginInit();
@@ -56,10 +55,10 @@
             // btn_LoadImage
             // 
             this.btn_LoadImage.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_LoadImage.Location = new System.Drawing.Point(83, 394);
+            this.btn_LoadImage.Location = new System.Drawing.Point(83, 381);
             this.btn_LoadImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_LoadImage.Name = "btn_LoadImage";
-            this.btn_LoadImage.Size = new System.Drawing.Size(131, 39);
+            this.btn_LoadImage.Size = new System.Drawing.Size(105, 28);
             this.btn_LoadImage.TabIndex = 0;
             this.btn_LoadImage.Text = "Load image";
             this.btn_LoadImage.UseVisualStyleBackColor = false;
@@ -121,10 +120,10 @@
             // btn_Cancelar
             // 
             this.btn_Cancelar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Cancelar.Location = new System.Drawing.Point(307, 394);
+            this.btn_Cancelar.Location = new System.Drawing.Point(336, 381);
             this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(131, 39);
+            this.btn_Cancelar.Size = new System.Drawing.Size(102, 26);
             this.btn_Cancelar.TabIndex = 6;
             this.btn_Cancelar.Text = "Cancel";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
@@ -132,7 +131,7 @@
             // 
             // txtbox_size
             // 
-            this.txtbox_size.Location = new System.Drawing.Point(121, 529);
+            this.txtbox_size.Location = new System.Drawing.Point(127, 457);
             this.txtbox_size.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbox_size.Name = "txtbox_size";
             this.txtbox_size.Size = new System.Drawing.Size(93, 22);
@@ -141,7 +140,7 @@
             // 
             // txtb_genes
             // 
-            this.txtb_genes.Location = new System.Drawing.Point(606, 512);
+            this.txtb_genes.Location = new System.Drawing.Point(373, 504);
             this.txtb_genes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_genes.Name = "txtb_genes";
             this.txtb_genes.Size = new System.Drawing.Size(65, 22);
@@ -149,7 +148,7 @@
             // 
             // txtb_cross
             // 
-            this.txtb_cross.Location = new System.Drawing.Point(812, 462);
+            this.txtb_cross.Location = new System.Drawing.Point(151, 559);
             this.txtb_cross.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_cross.Name = "txtb_cross";
             this.txtb_cross.Size = new System.Drawing.Size(68, 22);
@@ -158,7 +157,7 @@
             // 
             // txtb_uducks
             // 
-            this.txtb_uducks.Location = new System.Drawing.Point(829, 512);
+            this.txtb_uducks.Location = new System.Drawing.Point(387, 562);
             this.txtb_uducks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_uducks.Name = "txtb_uducks";
             this.txtb_uducks.Size = new System.Drawing.Size(51, 22);
@@ -167,7 +166,7 @@
             // lbl_Size
             // 
             this.lbl_Size.AutoSize = true;
-            this.lbl_Size.Location = new System.Drawing.Point(80, 529);
+            this.lbl_Size.Location = new System.Drawing.Point(86, 457);
             this.lbl_Size.Name = "lbl_Size";
             this.lbl_Size.Size = new System.Drawing.Size(35, 17);
             this.lbl_Size.TabIndex = 11;
@@ -177,7 +176,7 @@
             // lbl_CrossPrcnt
             // 
             this.lbl_CrossPrcnt.AutoSize = true;
-            this.lbl_CrossPrcnt.Location = new System.Drawing.Point(747, 462);
+            this.lbl_CrossPrcnt.Location = new System.Drawing.Point(86, 559);
             this.lbl_CrossPrcnt.Name = "lbl_CrossPrcnt";
             this.lbl_CrossPrcnt.Size = new System.Drawing.Size(60, 17);
             this.lbl_CrossPrcnt.TabIndex = 12;
@@ -186,7 +185,7 @@
             // lbl_UglyDucks
             // 
             this.lbl_UglyDucks.AutoSize = true;
-            this.lbl_UglyDucks.Location = new System.Drawing.Point(747, 512);
+            this.lbl_UglyDucks.Location = new System.Drawing.Point(305, 562);
             this.lbl_UglyDucks.Name = "lbl_UglyDucks";
             this.lbl_UglyDucks.Size = new System.Drawing.Size(77, 17);
             this.lbl_UglyDucks.TabIndex = 13;
@@ -195,7 +194,7 @@
             // lbl_GenesPrcnt
             // 
             this.lbl_GenesPrcnt.AutoSize = true;
-            this.lbl_GenesPrcnt.Location = new System.Drawing.Point(538, 515);
+            this.lbl_GenesPrcnt.Location = new System.Drawing.Point(305, 507);
             this.lbl_GenesPrcnt.Name = "lbl_GenesPrcnt";
             this.lbl_GenesPrcnt.Size = new System.Drawing.Size(62, 17);
             this.lbl_GenesPrcnt.TabIndex = 14;
@@ -204,7 +203,7 @@
             // lbl_Amount
             // 
             this.lbl_Amount.AutoSize = true;
-            this.lbl_Amount.Location = new System.Drawing.Point(80, 576);
+            this.lbl_Amount.Location = new System.Drawing.Point(86, 504);
             this.lbl_Amount.Name = "lbl_Amount";
             this.lbl_Amount.Size = new System.Drawing.Size(56, 17);
             this.lbl_Amount.TabIndex = 15;
@@ -212,7 +211,7 @@
             // 
             // txtb_amount
             // 
-            this.txtb_amount.Location = new System.Drawing.Point(142, 576);
+            this.txtb_amount.Location = new System.Drawing.Point(148, 504);
             this.txtb_amount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_amount.Name = "txtb_amount";
             this.txtb_amount.Size = new System.Drawing.Size(71, 22);
@@ -221,7 +220,7 @@
             // lbl_mutationPrcnt
             // 
             this.lbl_mutationPrcnt.AutoSize = true;
-            this.lbl_mutationPrcnt.Location = new System.Drawing.Point(538, 462);
+            this.lbl_mutationPrcnt.Location = new System.Drawing.Point(305, 454);
             this.lbl_mutationPrcnt.Name = "lbl_mutationPrcnt";
             this.lbl_mutationPrcnt.Size = new System.Drawing.Size(74, 17);
             this.lbl_mutationPrcnt.TabIndex = 17;
@@ -229,28 +228,17 @@
             // 
             // txtb_mutation
             // 
-            this.txtb_mutation.Location = new System.Drawing.Point(618, 462);
+            this.txtb_mutation.Location = new System.Drawing.Point(385, 454);
             this.txtb_mutation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_mutation.Name = "txtb_mutation";
             this.txtb_mutation.Size = new System.Drawing.Size(51, 22);
             this.txtb_mutation.TabIndex = 18;
             // 
-            // btn_Test
-            // 
-            this.btn_Test.Location = new System.Drawing.Point(83, 457);
-            this.btn_Test.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_Test.Name = "btn_Test";
-            this.btn_Test.Size = new System.Drawing.Size(131, 33);
-            this.btn_Test.TabIndex = 19;
-            this.btn_Test.Text = "Test";
-            this.btn_Test.UseVisualStyleBackColor = true;
-            this.btn_Test.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btn_Generate
             // 
-            this.btn_Generate.Location = new System.Drawing.Point(307, 529);
+            this.btn_Generate.Location = new System.Drawing.Point(187, 598);
             this.btn_Generate.Name = "btn_Generate";
-            this.btn_Generate.Size = new System.Drawing.Size(131, 55);
+            this.btn_Generate.Size = new System.Drawing.Size(130, 29);
             this.btn_Generate.TabIndex = 20;
             this.btn_Generate.Text = "Generate";
             this.btn_Generate.UseVisualStyleBackColor = true;
@@ -264,7 +252,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1075, 665);
             this.Controls.Add(this.btn_Generate);
-            this.Controls.Add(this.btn_Test);
             this.Controls.Add(this.txtb_mutation);
             this.Controls.Add(this.lbl_mutationPrcnt);
             this.Controls.Add(this.txtb_amount);
@@ -314,7 +301,6 @@
         private System.Windows.Forms.TextBox txtb_amount;
         private System.Windows.Forms.Label lbl_mutationPrcnt;
         private System.Windows.Forms.TextBox txtb_mutation;
-        private System.Windows.Forms.Button btn_Test;
         private System.Windows.Forms.Button btn_Generate;
     }
 }
