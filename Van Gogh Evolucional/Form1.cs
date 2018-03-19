@@ -14,6 +14,8 @@ namespace Van_Gogh_Evolucional
     {
         //Global variables
         ImageHandler imgHandler = new ImageHandler();
+        ImageGenerator imgGenerator = new ImageGenerator();
+
         //Keeps count of the generation 
         int generationCounter = 0;
 
@@ -57,30 +59,7 @@ namespace Van_Gogh_Evolucional
 
         private void btn_PremioNobel_Click(object sender, EventArgs e)
         {
-            int width = 640; //width 
-            int height = 320;  //height
-
-            //Bitmap
-            Bitmap randomImage = new Bitmap(width, height);
-            //Random number
-            Random rand = new Random();
-            
-            //Create random pixels
-            for (int y = 0; y < height; y++)
-            {
-                for (int x = 0; x < width; x++)
-                {
-                    //Create random ARGB values
-                    int a = rand.Next(256);
-                    int r = rand.Next(256);
-                    int g = rand.Next(256);
-                    int b = rand.Next(256);
-
-                    //Set ARGB value
-                    randomImage.SetPixel(x, y, Color.FromArgb(a, r, g, b));
-                }
-            }//end of For
-
+            Bitmap randomImage = imgGenerator.generateRandomImage();
             this.picBox_generatedImage.BackgroundImage = null;
             this.picBox_generatedImage.Image = randomImage;
 
@@ -116,7 +95,6 @@ namespace Van_Gogh_Evolucional
             int mutation = int.Parse(txtb_mutation.Text);
             int uglyDucks = int.Parse(txtb_uducks.Text);
 
-            ImageGenerator imgGenerator = new ImageGenerator();
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
 
