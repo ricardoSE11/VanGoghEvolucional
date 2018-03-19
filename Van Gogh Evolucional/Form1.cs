@@ -14,6 +14,8 @@ namespace Van_Gogh_Evolucional
     {
         //Global variables
         ImageHandler imgHandler = new ImageHandler();
+        //Keeps count of the generation 
+        int generationCounter = 0;
 
         public form_MainWindow()
         {

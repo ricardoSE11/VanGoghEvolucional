@@ -54,7 +54,7 @@ namespace Van_Gogh_Evolucional
                         int comparingDistance = distanceCalculator.intImgManhattanDistance(metaImage, orderedList[j]);
                         int lastDistance = distanceCalculator.intImgManhattanDistance(metaImage, orderedList[orderedList.Count - 1]);
 
-                        if (currentDistance < comparingDistance)
+                        if (currentDistance <= comparingDistance)
                             orderedList.Insert(orderedList.IndexOf(orderedList[j]), images[i]);
 
                         if (currentDistance > lastDistance)
