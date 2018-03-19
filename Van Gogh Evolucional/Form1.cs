@@ -95,11 +95,6 @@ namespace Van_Gogh_Evolucional
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtbox_size_TextChanged(object sender, EventArgs e)
         {
 

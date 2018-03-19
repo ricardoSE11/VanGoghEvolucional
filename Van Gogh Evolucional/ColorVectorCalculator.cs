@@ -51,7 +51,7 @@ namespace Van_Gogh_Evolucional
         {
             int[] blueFrequencyVector = new int[256];
             int blue = 0;
-
+            int prueba = 0;
             for (int i = 0; i < image.Width; i++)
             {
                 for (int j = 0; j < image.Height; j++)
