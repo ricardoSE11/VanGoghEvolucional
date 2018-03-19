@@ -9,11 +9,11 @@ namespace Van_Gogh_Evolucional
 {
     class HistogramCalculator
     {
-        VectorCalculator colorVectorCalculator; 
+        ColorVectorCalculator colorVectorCalculator; 
         //Contructor 
         public HistogramCalculator()
         {
-            colorVectorCalculator = new VectorCalculator();
+            colorVectorCalculator = new ColorVectorCalculator();
             Console.WriteLine("- Instatiating a Histrogram Calculator -");
         }
 

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Van_Gogh_Evolucional
 {
-    class VectorCalculator
+    class ColorVectorCalculator
     {
         //Constructor
-        public VectorCalculator()
+        public ColorVectorCalculator()
         {
             Console.WriteLine("- Instantiating a Color Vector Calculator. -");
         }
