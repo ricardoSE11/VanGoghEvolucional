@@ -11,7 +11,7 @@ namespace Van_Gogh_Evolucional
     {
         HistogramCalculator histogramCalculator;
         //Constructor
-        DistanceCalculator()
+        public DistanceCalculator()
         {
             histogramCalculator = new HistogramCalculator();
             Console.WriteLine(" - Instantiating a Distance Calculator -");
@@ -47,6 +47,26 @@ namespace Van_Gogh_Evolucional
             result.Add(greenDistance);
             result.Add(blueDistance);
 
+            return result;
+        }
+
+        //Accuracy is going to be lost
+        public int intImgManhattanDistance(Bitmap imageOne, Bitmap imageTwo)
+        {
+            int result = 0;
+
+            int redDistance = 0;
+            int greenDistance = 0;
+            int blueDistance = 0;
+
+            List<int[]> histogramOne = histogramCalculator.getColorHistogram(imageOne);
+            List<int[]> histogramTwo = histogramCalculator.getColorHistogram(imageTwo);
+
+            redDistance = manhattanDistance(histogramOne[0], histogramTwo[0]);
+            greenDistance = manhattanDistance(histogramOne[1], histogramTwo[1]);
+            blueDistance = manhattanDistance(histogramOne[2], histogramTwo[2]);
+
+            result = redDistance + greenDistance + blueDistance;
             return result;
         }
     }

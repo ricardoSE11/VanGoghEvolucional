@@ -12,6 +12,11 @@ namespace Van_Gogh_Evolucional
 {
     public partial class form_MainWindow : Form
     {
+        //Global variables
+        ImageHandler imgHandler = new ImageHandler();
+        //Keeps count of the generation 
+        int generationCounter = 0;
+
         public form_MainWindow()
         {
             InitializeComponent();
@@ -42,9 +47,10 @@ namespace Van_Gogh_Evolucional
         private void btn_Manhattan_Click(object sender, EventArgs e)
         {
             //Resized image placed here to check functionality.
-            ImageHandler imgProcessor = new ImageHandler();
-            Bitmap resizedImg = imgProcessor.resizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640 , 320 , 1080);
-            resizedImg = imgProcessor.blurFilter(resizedImg, 5);
+            Bitmap resizedImg = imgHandler.resizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640 , 320 , 1080);
+            //Blur metaImage.
+            resizedImg = imgHandler.blurFilter(resizedImg, 5);
+            //Display the image.
             picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
             picBox_generatedImage.Image = resizedImg;
         }
@@ -112,12 +118,18 @@ namespace Van_Gogh_Evolucional
 
             ImageGenerator imgGenerator = new ImageGenerator();
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
-            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population);
+            List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
 
-
+            Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
+            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population , metaImage);
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

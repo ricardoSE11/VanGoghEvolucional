@@ -78,5 +78,7 @@ namespace Van_Gogh_Evolucional
             }//end of For
             return transparencyFrequencyVector;
         }
+
+
     }
 }

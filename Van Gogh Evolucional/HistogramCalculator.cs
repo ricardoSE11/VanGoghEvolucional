@@ -30,8 +30,14 @@ namespace Van_Gogh_Evolucional
             colorHistogram.Add(greenVector);
             colorHistogram.Add(blueVector);
 
+            Console.WriteLine("Calculated ColorHistogram");
             return colorHistogram;
         }
+
+
+    }
+
+
 
         public List<int> getLBPHistogram(Bitmap image)
         {
