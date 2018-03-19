@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_MainWindow));
+            System.Windows.Forms.CheckBox ckEnhanceVisual;
             this.btn_LoadImage = new System.Windows.Forms.Button();
             this.picBox_metaImage = new System.Windows.Forms.PictureBox();
             this.btn_Manhattan = new System.Windows.Forms.Button();
@@ -48,6 +49,11 @@
             this.lbl_mutationPrcnt = new System.Windows.Forms.Label();
             this.txtb_mutation = new System.Windows.Forms.TextBox();
             this.btn_Generate = new System.Windows.Forms.Button();
+            this.ckBoxManhattan = new System.Windows.Forms.CheckBox();
+            this.ckBoxOurDistance = new System.Windows.Forms.CheckBox();
+            this.ckBoxColorHistogram = new System.Windows.Forms.CheckBox();
+            this.ckBoxHistogram = new System.Windows.Forms.CheckBox();
+            ckEnhanceVisual = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +88,7 @@
             this.btn_Manhattan.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btn_Manhattan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Manhattan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Manhattan.Location = new System.Drawing.Point(525, 394);
+            this.btn_Manhattan.Location = new System.Drawing.Point(525, 535);
             this.btn_Manhattan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Manhattan.Name = "btn_Manhattan";
             this.btn_Manhattan.Size = new System.Drawing.Size(131, 41);
@@ -108,7 +114,7 @@
             this.btn_PremioNobel.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btn_PremioNobel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_PremioNobel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_PremioNobel.Location = new System.Drawing.Point(749, 396);
+            this.btn_PremioNobel.Location = new System.Drawing.Point(749, 538);
             this.btn_PremioNobel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_PremioNobel.Name = "btn_PremioNobel";
             this.btn_PremioNobel.Size = new System.Drawing.Size(131, 41);
@@ -244,6 +250,57 @@
             this.btn_Generate.UseVisualStyleBackColor = true;
             this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click);
             // 
+            // ckBoxManhattan
+            // 
+            this.ckBoxManhattan.AutoSize = true;
+            this.ckBoxManhattan.Location = new System.Drawing.Point(537, 388);
+            this.ckBoxManhattan.Name = "ckBoxManhattan";
+            this.ckBoxManhattan.Size = new System.Drawing.Size(97, 21);
+            this.ckBoxManhattan.TabIndex = 21;
+            this.ckBoxManhattan.Text = "Manhattan";
+            this.ckBoxManhattan.UseVisualStyleBackColor = true;
+            this.ckBoxManhattan.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // ckBoxOurDistance
+            // 
+            this.ckBoxOurDistance.AutoSize = true;
+            this.ckBoxOurDistance.Location = new System.Drawing.Point(736, 387);
+            this.ckBoxOurDistance.Name = "ckBoxOurDistance";
+            this.ckBoxOurDistance.Size = new System.Drawing.Size(91, 21);
+            this.ckBoxOurDistance.TabIndex = 22;
+            this.ckBoxOurDistance.Text = "unNamed";
+            this.ckBoxOurDistance.UseVisualStyleBackColor = true;
+            // 
+            // ckBoxColorHistogram
+            // 
+            this.ckBoxColorHistogram.AutoSize = true;
+            this.ckBoxColorHistogram.Location = new System.Drawing.Point(537, 433);
+            this.ckBoxColorHistogram.Name = "ckBoxColorHistogram";
+            this.ckBoxColorHistogram.Size = new System.Drawing.Size(131, 21);
+            this.ckBoxColorHistogram.TabIndex = 23;
+            this.ckBoxColorHistogram.Text = "Color Histogram";
+            this.ckBoxColorHistogram.UseVisualStyleBackColor = true;
+            // 
+            // ckBoxHistogram
+            // 
+            this.ckBoxHistogram.AutoSize = true;
+            this.ckBoxHistogram.Location = new System.Drawing.Point(736, 433);
+            this.ckBoxHistogram.Name = "ckBoxHistogram";
+            this.ckBoxHistogram.Size = new System.Drawing.Size(122, 21);
+            this.ckBoxHistogram.TabIndex = 24;
+            this.ckBoxHistogram.Text = "Our Histogram";
+            this.ckBoxHistogram.UseVisualStyleBackColor = true;
+            // 
+            // ckEnhanceVisual
+            // 
+            ckEnhanceVisual.AutoSize = true;
+            ckEnhanceVisual.Location = new System.Drawing.Point(645, 487);
+            ckEnhanceVisual.Name = "ckEnhanceVisual";
+            ckEnhanceVisual.Size = new System.Drawing.Size(86, 21);
+            ckEnhanceVisual.TabIndex = 25;
+            ckEnhanceVisual.Text = "Enhance";
+            ckEnhanceVisual.UseVisualStyleBackColor = true;
+            // 
             // form_MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -251,6 +308,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1075, 665);
+            this.Controls.Add(ckEnhanceVisual);
+            this.Controls.Add(this.ckBoxHistogram);
+            this.Controls.Add(this.ckBoxColorHistogram);
+            this.Controls.Add(this.ckBoxOurDistance);
+            this.Controls.Add(this.ckBoxManhattan);
             this.Controls.Add(this.btn_Generate);
             this.Controls.Add(this.txtb_mutation);
             this.Controls.Add(this.lbl_mutationPrcnt);
@@ -302,6 +364,10 @@
         private System.Windows.Forms.Label lbl_mutationPrcnt;
         private System.Windows.Forms.TextBox txtb_mutation;
         private System.Windows.Forms.Button btn_Generate;
+        private System.Windows.Forms.CheckBox ckBoxManhattan;
+        private System.Windows.Forms.CheckBox ckBoxOurDistance;
+        private System.Windows.Forms.CheckBox ckBoxColorHistogram;
+        private System.Windows.Forms.CheckBox ckBoxHistogram;
     }
 }
 
