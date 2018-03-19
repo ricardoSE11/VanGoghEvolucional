@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorVectorCalculator.cs" />
+    <Compile Include="VectorCalculator.cs" />
     <Compile Include="DistanceCalculator.cs" />
     <Compile Include="HistogramCalculator.cs" />
     <Compile Include="ImageHandler.cs" />

@@ -9,11 +9,11 @@ namespace Van_Gogh_Evolucional
 {
     class HistogramCalculator
     {
-        ColorVectorCalculator colorVectorCalculator; 
+        VectorCalculator colorVectorCalculator; 
         //Contructor 
         public HistogramCalculator()
         {
-            colorVectorCalculator = new ColorVectorCalculator();
+            colorVectorCalculator = new VectorCalculator();
             Console.WriteLine("- Instatiating a Histrogram Calculator -");
         }
 
@@ -30,6 +30,7 @@ namespace Van_Gogh_Evolucional
             colorHistogram.Add(greenVector);
             colorHistogram.Add(blueVector);
 
+            Console.WriteLine("Calculated ColorHistogram");
             return colorHistogram;
         }
 
@@ -45,6 +46,7 @@ namespace Van_Gogh_Evolucional
             ccvColorHistogram.Add(greenVector);
             ccvColorHistogram.Add(blueVector);
 
+            Console.WriteLine("Calculated CVV ColorHistogram");
             return ccvColorHistogram;
         }
     }

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Van_Gogh_Evolucional
 {
-    class ColorVectorCalculator
+    class VectorCalculator
     {
         //Constructor
-        public ColorVectorCalculator()
+        public VectorCalculator()
         {
             Console.WriteLine("- Instantiating a Color Vector Calculator. -");
         }
@@ -77,53 +77,6 @@ namespace Van_Gogh_Evolucional
                 }
             }//end of For
             return transparencyFrequencyVector;
-        }
-        
-        // ----- Color Coherence Vector -----
-        //The length of the vector will be 10.
-        public int[] redVectorForCCV(Bitmap image)
-        {
-            int[] redVector = new int[10];
-            int red = 0;
-            for (int i = 0; i < image.Width; i++)
-            {
-                for (int j = 0; j < image.Height; j++)
-                {
-                    red = (image.GetPixel(i, j).R)/10 ;
-                    redVector[red] += 1;
-                }
-            }//end of For
-            return redVector;
-        }
-
-        public int[] greenVectorForCCV(Bitmap image)
-        {
-            int[] greenVector = new int[10];
-            int green = 0;
-            for (int i = 0; i < image.Width; i++)
-            {
-                for (int j = 0; j < image.Height; j++)
-                {
-                    green = (image.GetPixel(i, j).G ) / 10;
-                    greenVector[green] += 1;
-                }
-            }//end of For
-            return greenVector;
-        }
-
-        public int[] blueVectorForCCV(Bitmap image)
-        {
-            int[] blueVector = new int[10];
-            int blue = 0;
-            for (int i = 0; i < image.Width; i++)
-            {
-                for (int j = 0; j < image.Height; j++)
-                {
-                    blue = (image.GetPixel(i, j).B) / 10;
-                    blueVector[blue] += 1;
-                }
-            }//end of For
-            return blueVector;
         }
 
 

@@ -126,5 +126,16 @@ namespace Van_Gogh_Evolucional
             return blurred;
         }
 
+        public List<Bitmap> blurImages(List<Bitmap> images)
+        {
+            List<Bitmap> blurredList = new List<Bitmap>();
+            for (int i = 0; i < images.Count; i++)
+            {
+                images[i] = blurFilter(images[i], 5);
+                blurredList.Add(images[i]);
+            }
+            Console.WriteLine("Blurred: " + images.Count + " images");
+            return blurredList;
+        }
     }
 }
