@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_MainWindow));
             System.Windows.Forms.CheckBox ckEnhanceVisual;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_MainWindow));
             this.btn_LoadImage = new System.Windows.Forms.Button();
             this.picBox_metaImage = new System.Windows.Forms.PictureBox();
             this.btn_Manhattan = new System.Windows.Forms.Button();
@@ -49,26 +49,34 @@
             this.lbl_mutationPrcnt = new System.Windows.Forms.Label();
             this.txtb_mutation = new System.Windows.Forms.TextBox();
             this.btn_Generate = new System.Windows.Forms.Button();
-
             this.ckBoxManhattan = new System.Windows.Forms.CheckBox();
             this.ckBoxOurDistance = new System.Windows.Forms.CheckBox();
             this.ckBoxColorHistogram = new System.Windows.Forms.CheckBox();
             this.ckBoxHistogram = new System.Windows.Forms.CheckBox();
-            ckEnhanceVisual = new System.Windows.Forms.CheckBox();
-
             this.buttontest = new System.Windows.Forms.Button();
-
+            ckEnhanceVisual = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_metaImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_generatedImage)).BeginInit();
             this.SuspendLayout();
             // 
+            // ckEnhanceVisual
+            // 
+            ckEnhanceVisual.AutoSize = true;
+            ckEnhanceVisual.Location = new System.Drawing.Point(669, 594);
+            ckEnhanceVisual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ckEnhanceVisual.Name = "ckEnhanceVisual";
+            ckEnhanceVisual.Size = new System.Drawing.Size(86, 21);
+            ckEnhanceVisual.TabIndex = 25;
+            ckEnhanceVisual.Text = "Enhance";
+            ckEnhanceVisual.UseVisualStyleBackColor = true;
+            // 
             // btn_LoadImage
             // 
             this.btn_LoadImage.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_LoadImage.Location = new System.Drawing.Point(62, 310);
-            this.btn_LoadImage.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_LoadImage.Location = new System.Drawing.Point(83, 382);
+            this.btn_LoadImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_LoadImage.Name = "btn_LoadImage";
-            this.btn_LoadImage.Size = new System.Drawing.Size(79, 23);
+            this.btn_LoadImage.Size = new System.Drawing.Size(105, 28);
             this.btn_LoadImage.TabIndex = 0;
             this.btn_LoadImage.Text = "Load image";
             this.btn_LoadImage.UseVisualStyleBackColor = false;
@@ -79,10 +87,10 @@
             this.picBox_metaImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBox_metaImage.BackgroundImage")));
             this.picBox_metaImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBox_metaImage.InitialImage = null;
-            this.picBox_metaImage.Location = new System.Drawing.Point(62, 33);
-            this.picBox_metaImage.Margin = new System.Windows.Forms.Padding(2);
+            this.picBox_metaImage.Location = new System.Drawing.Point(83, 41);
+            this.picBox_metaImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBox_metaImage.Name = "picBox_metaImage";
-            this.picBox_metaImage.Size = new System.Drawing.Size(266, 266);
+            this.picBox_metaImage.Size = new System.Drawing.Size(355, 327);
             this.picBox_metaImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox_metaImage.TabIndex = 1;
             this.picBox_metaImage.TabStop = false;
@@ -92,15 +100,10 @@
             this.btn_Manhattan.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btn_Manhattan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Manhattan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-
-            this.btn_Manhattan.Location = new System.Drawing.Point(525, 535);
+            this.btn_Manhattan.Location = new System.Drawing.Point(525, 394);
             this.btn_Manhattan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
-            this.btn_Manhattan.Location = new System.Drawing.Point(394, 320);
-            this.btn_Manhattan.Margin = new System.Windows.Forms.Padding(2);
-
             this.btn_Manhattan.Name = "btn_Manhattan";
-            this.btn_Manhattan.Size = new System.Drawing.Size(98, 33);
+            this.btn_Manhattan.Size = new System.Drawing.Size(131, 41);
             this.btn_Manhattan.TabIndex = 2;
             this.btn_Manhattan.Text = "Manhattan";
             this.btn_Manhattan.UseVisualStyleBackColor = false;
@@ -111,10 +114,10 @@
             this.picBox_generatedImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBox_generatedImage.BackgroundImage")));
             this.picBox_generatedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBox_generatedImage.InitialImage = null;
-            this.picBox_generatedImage.Location = new System.Drawing.Point(394, 33);
-            this.picBox_generatedImage.Margin = new System.Windows.Forms.Padding(2);
+            this.picBox_generatedImage.Location = new System.Drawing.Point(525, 41);
+            this.picBox_generatedImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBox_generatedImage.Name = "picBox_generatedImage";
-            this.picBox_generatedImage.Size = new System.Drawing.Size(266, 266);
+            this.picBox_generatedImage.Size = new System.Drawing.Size(355, 327);
             this.picBox_generatedImage.TabIndex = 4;
             this.picBox_generatedImage.TabStop = false;
             // 
@@ -123,15 +126,10 @@
             this.btn_PremioNobel.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btn_PremioNobel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_PremioNobel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-
-            this.btn_PremioNobel.Location = new System.Drawing.Point(749, 538);
+            this.btn_PremioNobel.Location = new System.Drawing.Point(749, 396);
             this.btn_PremioNobel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
-            this.btn_PremioNobel.Location = new System.Drawing.Point(562, 322);
-            this.btn_PremioNobel.Margin = new System.Windows.Forms.Padding(2);
-
             this.btn_PremioNobel.Name = "btn_PremioNobel";
-            this.btn_PremioNobel.Size = new System.Drawing.Size(98, 33);
+            this.btn_PremioNobel.Size = new System.Drawing.Size(131, 41);
             this.btn_PremioNobel.TabIndex = 5;
             this.btn_PremioNobel.Text = "PremioNobel";
             this.btn_PremioNobel.UseVisualStyleBackColor = false;
@@ -140,10 +138,10 @@
             // btn_Cancelar
             // 
             this.btn_Cancelar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Cancelar.Location = new System.Drawing.Point(252, 310);
-            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Cancelar.Location = new System.Drawing.Point(336, 382);
+            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(76, 21);
+            this.btn_Cancelar.Size = new System.Drawing.Size(101, 26);
             this.btn_Cancelar.TabIndex = 6;
             this.btn_Cancelar.Text = "Cancel";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
@@ -151,45 +149,44 @@
             // 
             // txtbox_size
             // 
-            this.txtbox_size.Location = new System.Drawing.Point(95, 371);
-            this.txtbox_size.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbox_size.Location = new System.Drawing.Point(127, 457);
+            this.txtbox_size.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbox_size.Name = "txtbox_size";
-            this.txtbox_size.Size = new System.Drawing.Size(71, 20);
+            this.txtbox_size.Size = new System.Drawing.Size(93, 22);
             this.txtbox_size.TabIndex = 7;
             this.txtbox_size.TextChanged += new System.EventHandler(this.txtbox_size_TextChanged);
             // 
             // txtb_genes
             // 
-            this.txtb_genes.Location = new System.Drawing.Point(280, 410);
-            this.txtb_genes.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_genes.Location = new System.Drawing.Point(373, 505);
+            this.txtb_genes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_genes.Name = "txtb_genes";
-            this.txtb_genes.Size = new System.Drawing.Size(50, 20);
+            this.txtb_genes.Size = new System.Drawing.Size(65, 22);
             this.txtb_genes.TabIndex = 8;
             // 
             // txtb_cross
             // 
-            this.txtb_cross.Location = new System.Drawing.Point(113, 454);
-            this.txtb_cross.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_cross.Location = new System.Drawing.Point(151, 559);
+            this.txtb_cross.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_cross.Name = "txtb_cross";
-            this.txtb_cross.Size = new System.Drawing.Size(52, 20);
+            this.txtb_cross.Size = new System.Drawing.Size(68, 22);
             this.txtb_cross.TabIndex = 9;
             this.txtb_cross.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtb_uducks
             // 
-            this.txtb_uducks.Location = new System.Drawing.Point(290, 457);
-            this.txtb_uducks.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_uducks.Location = new System.Drawing.Point(387, 562);
+            this.txtb_uducks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_uducks.Name = "txtb_uducks";
-            this.txtb_uducks.Size = new System.Drawing.Size(39, 20);
+            this.txtb_uducks.Size = new System.Drawing.Size(51, 22);
             this.txtb_uducks.TabIndex = 10;
             // 
             // lbl_Size
             // 
             this.lbl_Size.AutoSize = true;
-            this.lbl_Size.Location = new System.Drawing.Point(64, 371);
-            this.lbl_Size.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Size.Location = new System.Drawing.Point(85, 457);
             this.lbl_Size.Name = "lbl_Size";
-            this.lbl_Size.Size = new System.Drawing.Size(27, 13);
+            this.lbl_Size.Size = new System.Drawing.Size(35, 17);
             this.lbl_Size.TabIndex = 11;
             this.lbl_Size.Text = "Size";
             this.lbl_Size.Click += new System.EventHandler(this.label1_Click);
@@ -197,85 +194,80 @@
             // lbl_CrossPrcnt
             // 
             this.lbl_CrossPrcnt.AutoSize = true;
-            this.lbl_CrossPrcnt.Location = new System.Drawing.Point(64, 454);
-            this.lbl_CrossPrcnt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_CrossPrcnt.Location = new System.Drawing.Point(85, 559);
             this.lbl_CrossPrcnt.Name = "lbl_CrossPrcnt";
-            this.lbl_CrossPrcnt.Size = new System.Drawing.Size(44, 13);
+            this.lbl_CrossPrcnt.Size = new System.Drawing.Size(60, 17);
             this.lbl_CrossPrcnt.TabIndex = 12;
             this.lbl_CrossPrcnt.Text = "Cross %";
             // 
             // lbl_UglyDucks
             // 
             this.lbl_UglyDucks.AutoSize = true;
-            this.lbl_UglyDucks.Location = new System.Drawing.Point(229, 457);
-            this.lbl_UglyDucks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_UglyDucks.Location = new System.Drawing.Point(305, 562);
             this.lbl_UglyDucks.Name = "lbl_UglyDucks";
-            this.lbl_UglyDucks.Size = new System.Drawing.Size(60, 13);
+            this.lbl_UglyDucks.Size = new System.Drawing.Size(77, 17);
             this.lbl_UglyDucks.TabIndex = 13;
             this.lbl_UglyDucks.Text = "Ugly ducks";
             // 
             // lbl_GenesPrcnt
             // 
             this.lbl_GenesPrcnt.AutoSize = true;
-            this.lbl_GenesPrcnt.Location = new System.Drawing.Point(229, 412);
-            this.lbl_GenesPrcnt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_GenesPrcnt.Location = new System.Drawing.Point(305, 507);
             this.lbl_GenesPrcnt.Name = "lbl_GenesPrcnt";
-            this.lbl_GenesPrcnt.Size = new System.Drawing.Size(46, 13);
+            this.lbl_GenesPrcnt.Size = new System.Drawing.Size(62, 17);
             this.lbl_GenesPrcnt.TabIndex = 14;
             this.lbl_GenesPrcnt.Text = "Genes%";
             // 
             // lbl_Amount
             // 
             this.lbl_Amount.AutoSize = true;
-            this.lbl_Amount.Location = new System.Drawing.Point(64, 410);
-            this.lbl_Amount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Amount.Location = new System.Drawing.Point(85, 505);
             this.lbl_Amount.Name = "lbl_Amount";
-            this.lbl_Amount.Size = new System.Drawing.Size(43, 13);
+            this.lbl_Amount.Size = new System.Drawing.Size(56, 17);
             this.lbl_Amount.TabIndex = 15;
             this.lbl_Amount.Text = "Amount";
             // 
             // txtb_amount
             // 
-            this.txtb_amount.Location = new System.Drawing.Point(111, 410);
-            this.txtb_amount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_amount.Location = new System.Drawing.Point(148, 505);
+            this.txtb_amount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_amount.Name = "txtb_amount";
-            this.txtb_amount.Size = new System.Drawing.Size(54, 20);
+            this.txtb_amount.Size = new System.Drawing.Size(71, 22);
             this.txtb_amount.TabIndex = 16;
             // 
             // lbl_mutationPrcnt
             // 
             this.lbl_mutationPrcnt.AutoSize = true;
-            this.lbl_mutationPrcnt.Location = new System.Drawing.Point(229, 369);
-            this.lbl_mutationPrcnt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_mutationPrcnt.Location = new System.Drawing.Point(305, 454);
             this.lbl_mutationPrcnt.Name = "lbl_mutationPrcnt";
-            this.lbl_mutationPrcnt.Size = new System.Drawing.Size(56, 13);
+            this.lbl_mutationPrcnt.Size = new System.Drawing.Size(74, 17);
             this.lbl_mutationPrcnt.TabIndex = 17;
             this.lbl_mutationPrcnt.Text = "Mutation%";
             // 
             // txtb_mutation
             // 
-            this.txtb_mutation.Location = new System.Drawing.Point(289, 369);
-            this.txtb_mutation.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_mutation.Location = new System.Drawing.Point(385, 454);
+            this.txtb_mutation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_mutation.Name = "txtb_mutation";
-            this.txtb_mutation.Size = new System.Drawing.Size(39, 20);
+            this.txtb_mutation.Size = new System.Drawing.Size(51, 22);
             this.txtb_mutation.TabIndex = 18;
             // 
             // btn_Generate
             // 
-            this.btn_Generate.Location = new System.Drawing.Point(140, 486);
-            this.btn_Generate.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Generate.Location = new System.Drawing.Point(187, 598);
+            this.btn_Generate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Generate.Name = "btn_Generate";
-            this.btn_Generate.Size = new System.Drawing.Size(98, 24);
+            this.btn_Generate.Size = new System.Drawing.Size(131, 30);
             this.btn_Generate.TabIndex = 20;
             this.btn_Generate.Text = "Generate";
             this.btn_Generate.UseVisualStyleBackColor = true;
             this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click);
             // 
-
             // ckBoxManhattan
             // 
             this.ckBoxManhattan.AutoSize = true;
-            this.ckBoxManhattan.Location = new System.Drawing.Point(537, 388);
+            this.ckBoxManhattan.Location = new System.Drawing.Point(525, 473);
+            this.ckBoxManhattan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckBoxManhattan.Name = "ckBoxManhattan";
             this.ckBoxManhattan.Size = new System.Drawing.Size(97, 21);
             this.ckBoxManhattan.TabIndex = 21;
@@ -286,7 +278,8 @@
             // ckBoxOurDistance
             // 
             this.ckBoxOurDistance.AutoSize = true;
-            this.ckBoxOurDistance.Location = new System.Drawing.Point(736, 387);
+            this.ckBoxOurDistance.Location = new System.Drawing.Point(790, 471);
+            this.ckBoxOurDistance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckBoxOurDistance.Name = "ckBoxOurDistance";
             this.ckBoxOurDistance.Size = new System.Drawing.Size(91, 21);
             this.ckBoxOurDistance.TabIndex = 22;
@@ -296,7 +289,8 @@
             // ckBoxColorHistogram
             // 
             this.ckBoxColorHistogram.AutoSize = true;
-            this.ckBoxColorHistogram.Location = new System.Drawing.Point(537, 433);
+            this.ckBoxColorHistogram.Location = new System.Drawing.Point(525, 528);
+            this.ckBoxColorHistogram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckBoxColorHistogram.Name = "ckBoxColorHistogram";
             this.ckBoxColorHistogram.Size = new System.Drawing.Size(131, 21);
             this.ckBoxColorHistogram.TabIndex = 23;
@@ -306,47 +300,33 @@
             // ckBoxHistogram
             // 
             this.ckBoxHistogram.AutoSize = true;
-            this.ckBoxHistogram.Location = new System.Drawing.Point(736, 433);
+            this.ckBoxHistogram.Location = new System.Drawing.Point(790, 528);
+            this.ckBoxHistogram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckBoxHistogram.Name = "ckBoxHistogram";
             this.ckBoxHistogram.Size = new System.Drawing.Size(122, 21);
             this.ckBoxHistogram.TabIndex = 24;
             this.ckBoxHistogram.Text = "Our Histogram";
             this.ckBoxHistogram.UseVisualStyleBackColor = true;
             // 
-            // ckEnhanceVisual
-            // 
-            ckEnhanceVisual.AutoSize = true;
-            ckEnhanceVisual.Location = new System.Drawing.Point(645, 487);
-            ckEnhanceVisual.Name = "ckEnhanceVisual";
-            ckEnhanceVisual.Size = new System.Drawing.Size(86, 21);
-            ckEnhanceVisual.TabIndex = 25;
-            ckEnhanceVisual.Text = "Enhance";
-            ckEnhanceVisual.UseVisualStyleBackColor = true;
-
             // buttontest
             // 
             this.buttontest.Location = new System.Drawing.Point(0, 0);
             this.buttontest.Name = "buttontest";
             this.buttontest.Size = new System.Drawing.Size(75, 23);
             this.buttontest.TabIndex = 0;
-
             // 
             // form_MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-
-            this.ClientSize = new System.Drawing.Size(1075, 665);
+            this.ClientSize = new System.Drawing.Size(1013, 654);
             this.Controls.Add(ckEnhanceVisual);
             this.Controls.Add(this.ckBoxHistogram);
             this.Controls.Add(this.ckBoxColorHistogram);
             this.Controls.Add(this.ckBoxOurDistance);
             this.Controls.Add(this.ckBoxManhattan);
-
-            this.ClientSize = new System.Drawing.Size(806, 540);
-
             this.Controls.Add(this.btn_Generate);
             this.Controls.Add(this.txtb_mutation);
             this.Controls.Add(this.lbl_mutationPrcnt);
@@ -366,7 +346,7 @@
             this.Controls.Add(this.btn_Manhattan);
             this.Controls.Add(this.picBox_metaImage);
             this.Controls.Add(this.btn_LoadImage);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "form_MainWindow";
             this.Text = "Van Gogh Evolucional";
             this.Load += new System.EventHandler(this.form_MainWindow_Load);

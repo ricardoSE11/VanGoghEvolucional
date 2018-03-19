@@ -138,6 +138,8 @@ namespace Van_Gogh_Evolucional
             Console.WriteLine("Blurred: " + images.Count + " images");
             return blurredList;
 
+        }
+
         public Bitmap GrayFilter(Bitmap image)
         {
             Console.WriteLine("Turning to gray the image: " + image.ToString());
