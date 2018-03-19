@@ -72,46 +72,13 @@ namespace Van_Gogh_Evolucional
             return newImage;
         }
 
-        /*public Bitmap blurFilter(Bitmap image)
-        {
-            Bitmap blurredImage = new Bitmap(image.Width, image.Height);
-            int winSize = 1;
-            for (int i = 0; i < image.Width; i++)
-            {
-                for (int j = 0; j < image.Height; j++)
-                {
-                    System.Drawing.Color colour = image.GetPixel(i, j);
-                    int[] total = new int[3];
-                    int count = 0;
-                    for (int iOne = i - winSize; iOne <= iOne + winSize; iOne++)
-                    {
-                        for (int jOne = j - winSize; jOne <= jOne + winSize; jOne++)
-                        {
-                            total[0] += colour.R;
-                            total[1] += colour.G;
-                            total[2] += colour.B;
-
-                            count++;
-                        }
-                    }
-
-                    total[0] = total[0] / count;
-                    total[1] = total[1] / count;
-                    total[2] = total[2] / count;
-
-                    //(int)Math.Round eliminated.
-                    blurredImage.SetPixel(i, j, System.Drawing.Color.FromArgb(255, total[0], total[1], total[2] ) );
-
-                }
-            }
-        }*/
-
         public Bitmap blurFilter(Bitmap image, Int32 blurSize)
         {
             Console.WriteLine("Blurring the image: " + image.ToString());
             return blurImage(image, new Rectangle(0, 0, image.Width, image.Height), blurSize);
         }
 
+        //No special reason to keep it private
         private static Bitmap blurImage(Bitmap image, Rectangle rectangle, Int32 blurSize)
         {
             Bitmap blurred = new Bitmap(image.Width, image.Height);

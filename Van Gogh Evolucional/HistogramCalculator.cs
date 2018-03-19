@@ -32,6 +32,21 @@ namespace Van_Gogh_Evolucional
 
             return colorHistogram;
         }
+
+        public List<int[]> getCCVColorHistogram(Bitmap image)
+        {
+            List<int[]> ccvColorHistogram = new List<int[]>();
+            //Calculating vectors
+            int[] redVector = colorVectorCalculator.redVectorForCCV(image);
+            int[] greenVector = colorVectorCalculator.greenVectorForCCV(image);
+            int[] blueVector = colorVectorCalculator.blueVectorForCCV(image);
+            //Adding vectors to histogram
+            ccvColorHistogram.Add(redVector);
+            ccvColorHistogram.Add(greenVector);
+            ccvColorHistogram.Add(blueVector);
+
+            return ccvColorHistogram;
+        }
     }
 
 }
