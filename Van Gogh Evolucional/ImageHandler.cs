@@ -159,5 +159,35 @@ namespace Van_Gogh_Evolucional
             return blurred;
         }
 
+        public Bitmap GrayFilter(Bitmap image)
+        {
+            Console.WriteLine("Turning to gray the image: " + image.ToString());
+            return GrayImage(image);
+        }
+
+        private Bitmap GrayImage(Bitmap image)
+        {
+            Color actual;
+            Color newColor;
+            Bitmap newImage = new Bitmap(image.Width, image.Height);
+
+            for (int i = 0; i < image.Width; i++)
+            {
+
+                for (int j = 0; j < image.Height; j++)
+                {
+
+                    actual = image.GetPixel(i, j);
+                    //Console.WriteLine("actual; " + image.GetPixel(i, j));
+                    //Create newColor
+                    newColor = Color.FromArgb((actual.R + actual.B + actual.G) / 3, (actual.R + actual.B + actual.G) / 3, (actual.R + actual.B + actual.G) / 3);
+                    newImage.SetPixel(i, j, newColor);
+                    //Console.WriteLine("Prueba " + newImage.GetPixel(i, j));
+                }
+            }//end of For
+            Console.WriteLine("- Image converted to grayscale -");
+            return newImage;
+        }
+
     }
 }
