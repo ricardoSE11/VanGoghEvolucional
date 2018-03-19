@@ -60,6 +60,7 @@ namespace Van_Gogh_Evolucional
         private void btn_PremioNobel_Click(object sender, EventArgs e)
         {
             Bitmap randomImage = imgGenerator.generateRandomImage();
+            Bitmap randomImage2 = imgGenerator.generateRandomImage();
             this.picBox_generatedImage.BackgroundImage = null;
             this.picBox_generatedImage.Image = randomImage;
 
@@ -96,10 +97,18 @@ namespace Van_Gogh_Evolucional
             int uglyDucks = int.Parse(txtb_uducks.Text);
 
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
-            List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
+            //List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
 
             Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
             VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population , metaImage);
+            Bitmap randomImage = imgGenerator.generateRandomImage();
+            Bitmap randomImage2 = imgGenerator.generateRandomImage();
+            for (int i = 0; i < 1000; i++)
+            {
+                Bitmap result = vChamber.combineBitmaps(randomImage, randomImage2);
+                this.picBox_generatedImage.Image = result;
+            }
+            
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)

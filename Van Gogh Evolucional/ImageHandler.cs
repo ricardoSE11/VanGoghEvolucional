@@ -126,7 +126,6 @@ namespace Van_Gogh_Evolucional
             return blurred;
         }
 
-
         public List<Bitmap> blurImages(List<Bitmap> images)
         {
             List<Bitmap> blurredList = new List<Bitmap>();

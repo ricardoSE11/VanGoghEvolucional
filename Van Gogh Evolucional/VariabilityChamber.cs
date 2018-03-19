@@ -66,16 +66,66 @@ namespace Van_Gogh_Evolucional
             return orderedList;
         }
 
+        // -PENDIENTE-
         public Bitmap imageCross(Bitmap imageOne , Bitmap imageTwo)
         {
             //Lógica implacable de cruce
             return imageOne; //mientras tanto
         }
 
+        public Bitmap combineBitmaps(Bitmap imgOne, Bitmap imgTwo)
+        {
+            //read all images into memory
+            List<Bitmap> images = new List<Bitmap>();
+            images.Add(imgOne);
+            images.Add(imgTwo);
+            Bitmap finalImage = null;
+
+            int width = imgOne.Width;
+            int height = imgOne.Height;
+
+            //create a bitmap to hold the combined image
+            finalImage = new Bitmap(width, height);
+
+            //get a graphics object from the image so we can draw on it
+            using (Graphics g = Graphics.FromImage(finalImage))
+
+            {
+                //set background color
+                g.Clear(Color.Black);
+
+                //go through each image and draw it on the final image
+                int offset = 0;
+                foreach (Bitmap image in images)
+                {
+                    g.DrawImage(image,
+                        new Rectangle(offset, 0, image.Width, image.Height));
+                    offset += image.Width;
+                }
+            }
+            if (finalImage.Equals(null))
+                Console.WriteLine("Ya llegué aquí: " + finalImage.ToString());
+
+            Console.WriteLine("NO SOY NULO PAPA");
+            return finalImage;
+        }  
+
+        // -PENDIENTE-
         public Bitmap imageMutation(Bitmap imageOne, Bitmap imageTwo)
         {
             //Lógica implacable de mutación
             return imageOne; //mientras tanto
+        }
+
+        public void paintImage()
+        {
+            /*Aquí va:
+              - La transición de las generaciones
+              - Las función de la mutación con un random que decide si hay que mutar o no (y % de genes a mutar)
+              - La función de cruce con un random que decide si hay que cruzar o no
+              - Patitos feos que tienen que pasar a la siguiente generación para ser cruzados.
+                    + El cruce, creo que yo, que puede ser aleatorio. Ya que, la distancia es que nos va a asegurar
+                    que los mejores individuos vayan pasando a la siguiente generación.*/
         }
     }
 }
