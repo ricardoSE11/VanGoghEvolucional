@@ -122,7 +122,9 @@ namespace Van_Gogh_Evolucional
             ImageGenerator imgGenerator = new ImageGenerator();
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
-            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population);
+
+            Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
+            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population , metaImage);
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
