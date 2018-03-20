@@ -139,7 +139,6 @@ namespace Van_Gogh_Evolucional
             return blurredList;
         }
 
-        }
 
         public Bitmap GrayFilter(Bitmap image)
         {

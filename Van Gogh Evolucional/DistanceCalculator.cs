@@ -69,5 +69,29 @@ namespace Van_Gogh_Evolucional
             result = redDistance + greenDistance + blueDistance;
             return result;
         }
+
+        public int siONoRazaDistance(int[] vectorOne, int[] vectorTwo)
+        {
+            int result = 0;
+            for (int i = 0; i < vectorOne.Length; i++)
+            {
+                if (result < Math.Abs(vectorOne[i] - vectorTwo[i]))
+                {
+                    result = Math.Abs(vectorOne[i] - vectorTwo[i]);
+                }
+            }
+            return result;
+        }
+        public int intImgSiONoRazaDistance(Bitmap imageOne, Bitmap imageTwo)
+        {
+            int result = 0;
+            int[] histogramOne = histogramCalculator.getLBPHistogram(imageOne);
+            int[] histogramTwo = histogramCalculator.getLBPHistogram(imageTwo);
+            result = siONoRazaDistance(histogramOne, histogramTwo);
+
+            return result;
+        }
+
+
     }
 }
