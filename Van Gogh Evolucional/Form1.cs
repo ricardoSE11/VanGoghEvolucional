@@ -15,6 +15,7 @@ namespace Van_Gogh_Evolucional
         //Global variables
         ImageHandler imgHandler = new ImageHandler();
         ImageGenerator imgGenerator = new ImageGenerator();
+        VariabilityChamber vChamber2 = new VariabilityChamber();
 
         //Keeps count of the generation 
         int generationCounter = 0;
@@ -49,7 +50,7 @@ namespace Van_Gogh_Evolucional
         private void btn_Manhattan_Click(object sender, EventArgs e)
         {
             //Resized image placed here to check functionality.
-            Bitmap resizedImg = imgHandler.resizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 640 , 320 , 1080);
+            Bitmap resizedImg = imgHandler.resizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 50 , 50 , 1080);
             //Blur metaImage.
             resizedImg = imgHandler.blurFilter(resizedImg, 5);
             //Display the image.
@@ -60,9 +61,21 @@ namespace Van_Gogh_Evolucional
         private void btn_PremioNobel_Click(object sender, EventArgs e)
         {
             Bitmap randomImage = imgGenerator.generateRandomImage();
-            Bitmap randomImage2 = imgGenerator.generateRandomImage();
-            this.picBox_generatedImage.BackgroundImage = null;
-            this.picBox_generatedImage.Image = randomImage;
+            Bitmap loadedImage = (Bitmap)picBox_metaImage.Image;
+            Bitmap result = null;
+
+            loadedImage = imgHandler.resizeImage(loadedImage , 640 , 320);
+            loadedImage = vChamber2.cropAtRectangle(loadedImage, 320, 160);
+
+            /*for (int i = 0; i < 5; i++)
+            {
+                result = vChamber2.concatenateBitmaps(loadedImage, randomImage);
+                picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                picBox_generatedImage.Image = result;
+            }*/
+            picBox_generatedImage.BackgroundImage = null;
+            picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBox_generatedImage.Image = loadedImage; //randomImage;
 
         }
 
@@ -101,14 +114,7 @@ namespace Van_Gogh_Evolucional
 
             Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
             VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population , metaImage);
-            Bitmap randomImage = imgGenerator.generateRandomImage();
-            Bitmap randomImage2 = imgGenerator.generateRandomImage();
-            for (int i = 0; i < 1000; i++)
-            {
-                Bitmap result = vChamber.combineBitmaps(randomImage, randomImage2);
-                this.picBox_generatedImage.Image = result;
-            }
-            
+       
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)

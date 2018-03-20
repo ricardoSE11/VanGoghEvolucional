@@ -19,8 +19,8 @@ namespace Van_Gogh_Evolucional
         //Generates a randomImage
         public Bitmap generateRandomImage()
         {
-            int width = 640; //width 
-            int height = 320;  //height
+            int width = 50; //width 
+            int height = 50;  //height
 
             //Bitmap
             Bitmap randomImage = new Bitmap(width, height);
@@ -33,10 +33,10 @@ namespace Van_Gogh_Evolucional
                 for (int x = 0; x < width; x++)
                 {
                     //Create random ARGB values
-                    int a = rand.Next(256);
-                    int r = rand.Next(256);
-                    int g = rand.Next(256);
-                    int b = rand.Next(256);
+                    int a = 255;//rand.Next(256);
+                    int r = 0;//rand.Next(256);
+                    int g = 0;//rand.Next(256);
+                    int b = 0;//rand.Next(256);
 
                     //Set ARGB value
                     randomImage.SetPixel(x, y, Color.FromArgb(a, r, g, b));
