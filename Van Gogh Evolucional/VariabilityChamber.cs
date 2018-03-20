@@ -73,16 +73,16 @@ namespace Van_Gogh_Evolucional
             return imageOne; //mientras tanto
         }
 
-        public Bitmap combineBitmaps(Bitmap imgOne, Bitmap imgTwo)
+        public Bitmap concatenateBitmaps(Bitmap imgOne, Bitmap imgTwo)
         {
             //read all images into memory
             List<Bitmap> images = new List<Bitmap>();
-            images.Add(imgOne);
             images.Add(imgTwo);
+            images.Add(imgOne);
             Bitmap finalImage = null;
 
-            int width = imgOne.Width;
-            int height = imgOne.Height;
+            int width = imgOne.Width * 2;
+            int height = imgOne.Height ;
 
             //create a bitmap to hold the combined image
             finalImage = new Bitmap(width, height);
@@ -106,15 +106,24 @@ namespace Van_Gogh_Evolucional
             if (finalImage.Equals(null))
                 Console.WriteLine("Ya llegué aquí: " + finalImage.ToString());
 
-            Console.WriteLine("NO SOY NULO PAPA");
             return finalImage;
-        }  
+        }
+
+        public Bitmap cropAtRectangle(Bitmap b, int width , int height)
+        {
+            Rectangle r = new Rectangle(0, 0, width, height);
+            Bitmap nb = new Bitmap(r.Width, r.Height);
+            Graphics g = Graphics.FromImage(nb);
+            g.DrawImage(b, -r.X, -r.Y);
+            return nb;
+        }
 
         // -PENDIENTE-
-        public Bitmap imageMutation(Bitmap imageOne, Bitmap imageTwo)
+        public Bitmap imageMutation(Bitmap image , int genesPercentage)
         {
             //Lógica implacable de mutación
-            return imageOne; //mientras tanto
+
+            return image; //mientras tanto
         }
 
         public void paintImage()
