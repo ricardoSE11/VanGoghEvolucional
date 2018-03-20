@@ -63,7 +63,7 @@
             // 
             ckEnhanceVisual.AutoSize = true;
             ckEnhanceVisual.Location = new System.Drawing.Point(669, 594);
-            ckEnhanceVisual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ckEnhanceVisual.Margin = new System.Windows.Forms.Padding(4);
             ckEnhanceVisual.Name = "ckEnhanceVisual";
             ckEnhanceVisual.Size = new System.Drawing.Size(86, 21);
             ckEnhanceVisual.TabIndex = 25;
@@ -126,7 +126,7 @@
             this.btn_PremioNobel.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btn_PremioNobel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_PremioNobel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_PremioNobel.Location = new System.Drawing.Point(749, 396);
+            this.btn_PremioNobel.Location = new System.Drawing.Point(749, 394);
             this.btn_PremioNobel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_PremioNobel.Name = "btn_PremioNobel";
             this.btn_PremioNobel.Size = new System.Drawing.Size(131, 41);
@@ -267,7 +267,7 @@
             // 
             this.ckBoxManhattan.AutoSize = true;
             this.ckBoxManhattan.Location = new System.Drawing.Point(525, 473);
-            this.ckBoxManhattan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckBoxManhattan.Margin = new System.Windows.Forms.Padding(4);
             this.ckBoxManhattan.Name = "ckBoxManhattan";
             this.ckBoxManhattan.Size = new System.Drawing.Size(97, 21);
             this.ckBoxManhattan.TabIndex = 21;
@@ -279,7 +279,7 @@
             // 
             this.ckBoxOurDistance.AutoSize = true;
             this.ckBoxOurDistance.Location = new System.Drawing.Point(790, 471);
-            this.ckBoxOurDistance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckBoxOurDistance.Margin = new System.Windows.Forms.Padding(4);
             this.ckBoxOurDistance.Name = "ckBoxOurDistance";
             this.ckBoxOurDistance.Size = new System.Drawing.Size(91, 21);
             this.ckBoxOurDistance.TabIndex = 22;
@@ -290,7 +290,7 @@
             // 
             this.ckBoxColorHistogram.AutoSize = true;
             this.ckBoxColorHistogram.Location = new System.Drawing.Point(525, 528);
-            this.ckBoxColorHistogram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckBoxColorHistogram.Margin = new System.Windows.Forms.Padding(4);
             this.ckBoxColorHistogram.Name = "ckBoxColorHistogram";
             this.ckBoxColorHistogram.Size = new System.Drawing.Size(131, 21);
             this.ckBoxColorHistogram.TabIndex = 23;
@@ -301,7 +301,7 @@
             // 
             this.ckBoxHistogram.AutoSize = true;
             this.ckBoxHistogram.Location = new System.Drawing.Point(790, 528);
-            this.ckBoxHistogram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckBoxHistogram.Margin = new System.Windows.Forms.Padding(4);
             this.ckBoxHistogram.Name = "ckBoxHistogram";
             this.ckBoxHistogram.Size = new System.Drawing.Size(122, 21);
             this.ckBoxHistogram.TabIndex = 24;

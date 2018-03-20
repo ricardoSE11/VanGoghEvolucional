@@ -34,7 +34,9 @@ namespace Van_Gogh_Evolucional
             return colorHistogram;
         }
 
+
         public int[] getLBPHistogram(Bitmap image)
+
         {
             ImageHandler converter = new ImageHandler();
             int sizeVector = (image.Height * image.Width) - (2 * (image.Height) + 2 * (image.Width));
@@ -86,6 +88,7 @@ namespace Van_Gogh_Evolucional
             Console.WriteLine("Finish LBPHistogram");
             return LBPHistogram;
         }
+
     }
 
 }
