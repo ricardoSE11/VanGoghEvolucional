@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Van_Gogh_Evolucional
 {
@@ -99,7 +100,7 @@ namespace Van_Gogh_Evolucional
 
         }
 
-        private void btn_Generate_Click(object sender, EventArgs e)
+        private void generate()
         {
             //Generation parameters.
             int size = int.Parse(txtbox_size.Text);
@@ -108,13 +109,17 @@ namespace Van_Gogh_Evolucional
             int genes = int.Parse(txtb_genes.Text);
             int mutation = int.Parse(txtb_mutation.Text);
             int uglyDucks = int.Parse(txtb_uducks.Text);
-
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             //List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
 
             Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
-            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population , metaImage);
-       
+            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population, metaImage);
+        }
+        private void btn_Generate_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(generate);
+            thread.Start();
+          
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
