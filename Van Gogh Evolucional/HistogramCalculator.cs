@@ -34,10 +34,14 @@ namespace Van_Gogh_Evolucional
             return colorHistogram;
         }
 
-        public List<int> getLBPHistogram(Bitmap image)
+
+        public int[] getLBPHistogram(Bitmap image)
+
         {
             ImageHandler converter = new ImageHandler();
-            List<int> LBPHistogram = new List<int>();
+            int sizeVector = (image.Height * image.Width) - (2 * (image.Height) + 2 * (image.Width));
+            int [] LBPHistogram = new int[sizeVector];
+            List<int[]> LHPHistograms= new List<int[]>();
             Bitmap imageGrayScale = converter.GrayFilter(image);
             int newValor = 0;
             for (int i = 0; i < imageGrayScale.Width; i++)
@@ -70,7 +74,7 @@ namespace Van_Gogh_Evolucional
                                             newValor += 2 ^ 7 - p;
                                         }
                                     }
-                                    LBPHistogram.Add(newValor);
+                                    LBPHistogram[i+j]=newValor;
                                     newValor = 0;
                                 }
                             }
@@ -79,6 +83,7 @@ namespace Van_Gogh_Evolucional
                     //the edges are not evaluated
                 }
             }
+            LHPHistograms.Add(LBPHistogram);
             //Finish LBPHistogram
             Console.WriteLine("Finish LBPHistogram");
             return LBPHistogram;
@@ -86,5 +91,5 @@ namespace Van_Gogh_Evolucional
 
     }
 
-    
 }
+
