@@ -53,6 +53,8 @@ namespace Van_Gogh_Evolucional
             for (int i = 0; i < amountOfImages; i++)
             {
                 Bitmap actual_Image = generateRandomImage();
+                //string nombre = "imagen"+i;
+                //actual_Image.Save("c:/Users/Armando/Downloads/Analisis/" + nombre+ ".jpg");
                 randomImages.Add(actual_Image);
             }
             Console.WriteLine(amountOfImages + " images generated.");
