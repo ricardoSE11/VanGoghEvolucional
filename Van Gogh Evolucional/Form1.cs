@@ -152,10 +152,30 @@ namespace Van_Gogh_Evolucional
             int uglyDucks = int.Parse(txtb_uducks.Text);
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             //List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
-
             Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
             VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population, metaImage);
-
+            if (ckBoxColorHistogram.Checked)
+            {
+                if (ckBoxManhattan.Checked)
+                {
+                    vChamber.orderByDistance(population,1,1);
+                }
+                else
+                {
+                    vChamber.orderByDistance(population, 1, 2);
+                }
+            }
+            if(ckBoxLBPHistogram.Checked)
+            {
+                if (ckBoxManhattan.Checked)
+                {
+                    vChamber.orderByDistance(population, 2, 1);
+                }
+                else
+                {
+                    vChamber.orderByDistance(population, 2, 2);
+                }
+            }
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {

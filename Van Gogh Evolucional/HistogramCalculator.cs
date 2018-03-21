@@ -71,7 +71,7 @@ namespace Van_Gogh_Evolucional
                                     {
                                         if (pos[p] > center)
                                         {
-                                            newValor += 2 ^ 7 - p;
+                                            newValor += 2 ^ (7 - p);
                                         }
                                     }
                                     LBPHistogram[i+j]=newValor;

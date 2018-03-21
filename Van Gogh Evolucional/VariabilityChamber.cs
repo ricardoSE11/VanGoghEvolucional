@@ -30,6 +30,7 @@ namespace Van_Gogh_Evolucional
             ugly_Ducks = uglyDucks;
             population = imgPopulation;
             metaImage = metaImg;
+
             Console.WriteLine("Creating a Variability Chamber with the following values: " 
                 + "Cross Percentage: " + crossPrcnt + " , " + "Mutation Percentage: " + mutationPrcnt +
                 " , " + "Genes Precentage: " + genesPrcnt + " , " + "Ugly ducks: " + uglyDucks);
@@ -38,8 +39,38 @@ namespace Van_Gogh_Evolucional
         // -PENDIENTE-
         public List<Bitmap> orderByDistance(List<Bitmap> images , int histogramID , int distanceID)
         {
+            DistanceCalculator distanceCalculator = new DistanceCalculator();
             List<Bitmap> orderedList = new List<Bitmap>();
+
+            List<int> distances = new List<int>();
+            int index = 0;
+            int total = images.Count;
+            if (distanceID==1)
+            {
+                for (int i=0; i< total; i++)
+                {
+                    distances.Add(distanceCalculator.intImgManhattanDistance(metaImage,images[i],histogramID));
+                }
+            }
+            else if (distanceID == 2)
+            {
+                for (int i = 0; i < total; i++)
+                {
+                    distances.Add(distanceCalculator.intImgSiONoRazaDistance(metaImage, images[i], histogramID));
+                }
+            }
+
+            for (int x=0;x< 10; x++)
+            {
+                index = distances.IndexOf(distances.Min());
+                Console.WriteLine("Imagen con distancia "+ distanceID+ " "+ histogramID+" " + x + ":" + distances.Min());
+                orderedList.Add(images[index]);
+                distances.RemoveAt(index);
+                images.RemoveAt(index);
+            }
+
             prueba(orderedList, metaImage);
+
             return orderedList;
         }
 
