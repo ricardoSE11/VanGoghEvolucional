@@ -65,7 +65,7 @@ namespace Van_Gogh_Evolucional
             Bitmap result = null;
 
             loadedImage = imgHandler.resizeImage(loadedImage , 640 , 320);
-            loadedImage = vChamber2.cropAtRectangle(loadedImage, 320, 160);
+            loadedImage = imgHandler.cropAtRectangle(loadedImage, 320, 160);
 
             /*for (int i = 0; i < 5; i++)
             {
