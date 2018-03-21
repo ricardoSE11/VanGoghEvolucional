@@ -86,21 +86,20 @@ namespace Van_Gogh_Evolucional
         public int siONoRazaDistance(int[] vectorOne, int[] vectorTwo)
         {
             int result = 0;
+            List<int> distances = new List<int>();
             for (int i = 0; i < vectorOne.Length; i++)
             {
-                if (result < Math.Abs(vectorOne[i] - vectorTwo[i]))
-                {
-                    result = Math.Abs(vectorOne[i] - vectorTwo[i]);
-                }
+                result+=(Math.Abs(vectorOne[i] - vectorTwo[i])*i);
             }
             return result;
         }
 
         public int intImgSiONoRazaDistance(Bitmap imageOne, Bitmap imageTwo , int histogramID)
         {
+            int result = 0;
             if (histogramID == 1)
             {
-                int result = 0;
+                
                 int redDistance = 0;
                 int greenDistance = 0;
                 int blueDistance = 0;
@@ -113,19 +112,17 @@ namespace Van_Gogh_Evolucional
                 blueDistance = siONoRazaDistance(histogramOne[2], histogramTwo[2]);
                 Console.WriteLine("El usuario eligió ColorHistogram con Si o No Raza? ");
                 result = redDistance + greenDistance + blueDistance;
-                return result;
             }
 
-            else
+            if(histogramID==2)
             {
-                int result = 0;
                 int[] histogramOne = histogramCalculator.getLBPHistogram(imageOne);
                 int[] histogramTwo = histogramCalculator.getLBPHistogram(imageTwo);
                 result = siONoRazaDistance(histogramOne, histogramTwo);
 
                 Console.WriteLine("El usuario eligió LBP con Si o No Raza? ");
-                return result;
             }
+            return result;
         }
 
 

@@ -17,7 +17,6 @@ namespace Van_Gogh_Evolucional
         int mutation_prcnt;
         int genes_prcnt;
         int ugly_Ducks;
-        DistanceCalculator distanceCalculator; 
         //Constructors
         public VariabilityChamber()
         {}
@@ -30,7 +29,7 @@ namespace Van_Gogh_Evolucional
             ugly_Ducks = uglyDucks;
             population = imgPopulation;
             metaImage = metaImg;
-            distanceCalculator = new DistanceCalculator();
+            
             Console.WriteLine("Creating a Variability Chamber with the following values: " 
                 + "Cross Percentage: " + crossPrcnt + " , " + "Mutation Percentage: " + mutationPrcnt +
                 " , " + "Genes Precentage: " + genesPrcnt + " , " + "Ugly ducks: " + uglyDucks);
@@ -38,53 +37,34 @@ namespace Van_Gogh_Evolucional
 
         public List<Bitmap> orderByDistance(List<Bitmap> images , int histogramID , int distanceID)
         {
+            DistanceCalculator distanceCalculator = new DistanceCalculator();
             List<Bitmap> orderedList = new List<Bitmap>();
-
-            for (int i = 0; i < images.Count; i++)
+            List<int> distances = new List<int>();
+            int index = 0;
+            int total = images.Count;
+            if (distanceID==1)
             {
-                Bitmap currentImage = images[i];
-                if (orderedList.Count == 0)
-                    orderedList.Add(images[i]);
-
-                else
+                for (int i=0; i< total; i++)
                 {
-                    //Distancia Manhattan
-                    if (distanceID == 1)
-                    {
-                        for (int j = 0; j < orderedList.Count; j++)
-                        {
-                            int currentDistance = distanceCalculator.intImgManhattanDistance(metaImage, images[i], histogramID);
-                            int comparingDistance = distanceCalculator.intImgManhattanDistance(metaImage, orderedList[j], histogramID);
-                            int lastDistance = distanceCalculator.intImgManhattanDistance(metaImage, orderedList[orderedList.Count - 1], histogramID);
-
-                            if (currentDistance <= comparingDistance)
-                                orderedList.Insert(orderedList.IndexOf(orderedList[j]), images[i]);
-
-                            if (currentDistance > lastDistance)
-                                orderedList.Add(images[i]);
-                        }
-                    }
-
-                    //Distancia Si O No Raza
-                    else
-                    {
-                        for (int j = 0; j < orderedList.Count; j++)
-                        {
-                            int currentDistance = distanceCalculator.intImgSiONoRazaDistance(metaImage, images[i], histogramID);
-                            int comparingDistance = distanceCalculator.intImgSiONoRazaDistance(metaImage, orderedList[j], histogramID);
-                            int lastDistance = distanceCalculator.intImgSiONoRazaDistance(metaImage, orderedList[orderedList.Count - 1], histogramID);
-
-                            if (currentDistance <= comparingDistance)
-                                orderedList.Insert(orderedList.IndexOf(orderedList[j]), images[i]);
-
-                            if (currentDistance > lastDistance)
-                                orderedList.Add(images[i]);
-                        }
-                    }
-                    
+                    distances.Add(distanceCalculator.intImgManhattanDistance(metaImage,images[i],histogramID));
                 }
             }
-            prueba(orderedList, metaImage);
+            else if (distanceID == 2)
+            {
+                for (int i = 0; i < total; i++)
+                {
+                    distances.Add(distanceCalculator.intImgSiONoRazaDistance(metaImage, images[i], histogramID));
+                }
+            }
+
+            for (int x=0;x< 10; x++)
+            {
+                index = distances.IndexOf(distances.Min());
+                Console.WriteLine("Imagen con distancia "+ distanceID+ " "+ histogramID+" " + x + ":" + distances.Min());
+                orderedList.Add(images[index]);
+                distances.RemoveAt(index);
+                images.RemoveAt(index);
+            }
             return orderedList;
         }
 
@@ -112,15 +92,6 @@ namespace Van_Gogh_Evolucional
               - Patitos feos que tienen que pasar a la siguiente generación para ser cruzados.
                     + El cruce, creo que yo, que puede ser aleatorio. Ya que, la distancia es que nos va a asegurar
                     que los mejores individuos vayan pasando a la siguiente generación.*/
-        }
-
-        public void prueba(List<Bitmap> images , Bitmap metaImage)
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                int distancia = distanceCalculator.intImgManhattanDistance(metaImage, images[i] , 1);
-                Console.WriteLine("Imagen: " + i + " - distancia: " + distancia );
-            }
         }
     }
 }
