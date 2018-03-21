@@ -66,7 +66,7 @@ namespace Van_Gogh_Evolucional
                 redDistance = manhattanDistance(histogramOne[0], histogramTwo[0]);
                 greenDistance = manhattanDistance(histogramOne[1], histogramTwo[1]);
                 blueDistance = manhattanDistance(histogramOne[2], histogramTwo[2]);
-                Console.WriteLine("El usuario eligió ColorHistogram con Manhattan ");
+                Console.WriteLine("El usuario eligió ColorHistogram con Manhattan [R =" + result + "]");
                 result = redDistance + greenDistance + blueDistance;
                 return result;
             }

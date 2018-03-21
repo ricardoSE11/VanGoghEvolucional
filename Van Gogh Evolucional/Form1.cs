@@ -16,7 +16,6 @@ namespace Van_Gogh_Evolucional
         //Global variables
         ImageHandler imgHandler = new ImageHandler();
         ImageGenerator imgGenerator = new ImageGenerator();
-        VariabilityChamber vChamber2 = new VariabilityChamber();
 
         //Keeps count of the generation 
         int generationCounter = 0;
@@ -63,20 +62,17 @@ namespace Van_Gogh_Evolucional
         {
             Bitmap randomImage = imgGenerator.generateRandomImage();
             Bitmap loadedImage = (Bitmap)picBox_metaImage.Image;
+
             Bitmap result = null;
 
-            loadedImage = imgHandler.resizeImage(loadedImage , 640 , 320);
-            loadedImage = imgHandler.cropAtRectangle(loadedImage, 320, 160);
-
-            /*for (int i = 0; i < 5; i++)
-            {
-                result = vChamber2.concatenateBitmaps(loadedImage, randomImage);
-                picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                picBox_generatedImage.Image = result;
-            }*/
+            loadedImage = imgHandler.resizeImage(loadedImage , 100 , 100);
+            loadedImage = imgHandler.cropAtRectangle(loadedImage, 50, 100);
+            randomImage = imgHandler.cropAtRectangle(randomImage, 50, 100);
+            result = imgHandler.concatenateBitmaps(randomImage, loadedImage);
+            result = imgHandler.resizeImage(result, 100, 100);
             picBox_generatedImage.BackgroundImage = null;
             picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            picBox_generatedImage.Image = loadedImage; //randomImage;
+            picBox_generatedImage.Image = result; //randomImage;
 
         }
 
