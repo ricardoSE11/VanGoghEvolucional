@@ -51,7 +51,7 @@ namespace Van_Gogh_Evolucional
         private void btn_Manhattan_Click(object sender, EventArgs e)
         {
             //Resized image placed here to check functionality.
-            Bitmap resizedImg = imgHandler.resizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 50 , 50 , 1080);
+            Bitmap resizedImg = imgHandler.resizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 100 , 100 , 1080);
             //Blur metaImage.
             resizedImg = imgHandler.blurFilter(resizedImg, 5);
             //Display the image.

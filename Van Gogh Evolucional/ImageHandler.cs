@@ -38,7 +38,7 @@ namespace Van_Gogh_Evolucional
                     graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
                 }
             }
-            Console.WriteLine("Resizing meta image to: " + width + " x " + height);
+            Console.WriteLine("Resizing image to: " + width + " x " + height);
             return resizedImage;
         }
 
@@ -211,6 +211,7 @@ namespace Van_Gogh_Evolucional
             Bitmap nb = new Bitmap(r.Width, r.Height);
             Graphics g = Graphics.FromImage(nb);
             g.DrawImage(b, -r.X, -r.Y);
+            Console.WriteLine("Croping an image. Result dimension:" + nb.Width + " x " + nb.Height);
             return nb;
         }
 
