@@ -14,7 +14,7 @@ namespace Van_Gogh_Evolucional
         public HistogramCalculator()
         {
             colorVectorCalculator = new ColorVectorCalculator();
-            Console.WriteLine("- Instatiating a Histrogram Calculator -");
+            //Console.WriteLine("- Instatiating a Histrogram Calculator -");
         }
 
         //Format:  List[0] = R | List[1] = G | List[2] = B
@@ -30,7 +30,7 @@ namespace Van_Gogh_Evolucional
             colorHistogram.Add(greenVector);
             colorHistogram.Add(blueVector);
 
-            Console.WriteLine("Calculated ColorHistogram");
+            //Console.WriteLine("Calculated ColorHistogram");
             return colorHistogram;
         }
 
@@ -85,7 +85,7 @@ namespace Van_Gogh_Evolucional
             }
             LHPHistograms.Add(LBPHistogram);
             //Finish LBPHistogram
-            Console.WriteLine("Finish LBPHistogram");
+            //Console.WriteLine("Finish LBPHistogram");
             return LBPHistogram;
         }
     }

@@ -14,7 +14,7 @@ namespace Van_Gogh_Evolucional
         //Constructor
         public ImageHandler()
         {
-            Console.WriteLine("Instatiating an ImageProcessor.");
+            //Console.WriteLine("Instatiating an ImageProcessor.");
         }
 
         public Bitmap resizeImage(Image image, int width, int height)
@@ -38,7 +38,7 @@ namespace Van_Gogh_Evolucional
                     graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
                 }
             }
-            Console.WriteLine("Resizing image to: " + width + " x " + height);
+            //Console.WriteLine("Resizing image to: " + width + " x " + height);
             return resizedImage;
         }
 
@@ -68,13 +68,13 @@ namespace Van_Gogh_Evolucional
                 graphics.SmoothingMode = SmoothingMode.HighQuality;
                 graphics.DrawImage(image, 0, 0, newWidth, newHeight);
             }
-            Console.WriteLine("Resizing meta image to: " + maxWidth + " x " + maxWidth);
+            //Console.WriteLine("Resizing meta image to: " + maxWidth + " x " + maxWidth);
             return newImage;
         }
 
         public Bitmap blurFilter(Bitmap image, Int32 blurSize)
         {
-            Console.WriteLine("Blurring the image: " + image.ToString());
+            //Console.WriteLine("Blurring the image: " + image.ToString());
             return blurImage(image, new Rectangle(0, 0, image.Width, image.Height), blurSize);
         }
 
@@ -134,7 +134,7 @@ namespace Van_Gogh_Evolucional
                 images[i] = blurFilter(images[i], 5);
                 blurredList.Add(images[i]);
             }
-            Console.WriteLine("Blurred: " + images.Count + " images");
+            //Console.WriteLine("Blurred: " + images.Count + " images");
             return blurredList;
         }
 
@@ -164,7 +164,7 @@ namespace Van_Gogh_Evolucional
                     //Console.WriteLine("Prueba " + newImage.GetPixel(i, j));
                 }
             }//end of For
-            Console.WriteLine("- Image converted to grayscale -");
+            //Console.WriteLine("- Image converted to grayscale -");
             return newImage;
 
         }
@@ -211,7 +211,7 @@ namespace Van_Gogh_Evolucional
             Bitmap nb = new Bitmap(r.Width, r.Height);
             Graphics g = Graphics.FromImage(nb);
             g.DrawImage(b, -r.X, -r.Y);
-            Console.WriteLine("Croping an image. Result dimension:" + nb.Width + " x " + nb.Height);
+            //Console.WriteLine("Croping an image. Result dimension:" + nb.Width + " x " + nb.Height);
             return nb;
         }
 

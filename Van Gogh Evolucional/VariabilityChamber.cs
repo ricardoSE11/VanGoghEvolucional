@@ -18,12 +18,14 @@ namespace Van_Gogh_Evolucional
         int genes_prcnt;
         int ugly_Ducks;
         int amount;
+        int size;
         //Constructors
         public VariabilityChamber()
         {}
 
-        public VariabilityChamber(int crossProb, int mutationProb, int genesPrcnt, int uglyDucks , List<Bitmap> imgPopulation , Bitmap metaImg , int amountC)
+        public VariabilityChamber(int tamaño, int crossProb, int mutationProb, int genesPrcnt, int uglyDucks , List<Bitmap> imgPopulation , Bitmap metaImg , int amountC)
         {
+            size = tamaño;
             cross_prob = crossProb;
             mutation_prob = mutationProb;
             genes_prcnt = genesPrcnt;
@@ -39,25 +41,29 @@ namespace Van_Gogh_Evolucional
         //10 mejores imagenes
         public List<Bitmap> getTheFittestImgs(List<Bitmap> images , int histogramID , int distanceID)
         {
-            Console.WriteLine(population.Count + ": cantidad de padres buenos");
             DistanceCalculator distanceCalculator = new DistanceCalculator();
             List<Bitmap> orderedList = new List<Bitmap>();
-
+            List<Bitmap> copyPopulation = new List<Bitmap>();
+            for (int i = 0; i < size; i++)
+            {
+                copyPopulation.Add(images[i]);
+            }
+            Console.WriteLine(copyPopulation.Count + ": cantidad de padres buenos");
             List<int> distances = new List<int>();
             int index = 0;
-            int total = images.Count;
+            int total = size;
             if (distanceID==1)
             {
                 for (int i=0; i< total; i++)
                 {
-                    distances.Add(distanceCalculator.intImgManhattanDistance(metaImage,images[i],histogramID));
+                    distances.Add(distanceCalculator.intImgManhattanDistance(metaImage, copyPopulation[i],histogramID));
                 }
             }
             else if (distanceID == 2)
             {
                 for (int i = 0; i < total; i++)
                 {
-                    distances.Add(distanceCalculator.intImgSiONoRazaDistance(metaImage, images[i], histogramID));
+                    distances.Add(distanceCalculator.intImgSiONoRazaDistance(metaImage, copyPopulation[i], histogramID));
                 }
             }
 
@@ -65,9 +71,9 @@ namespace Van_Gogh_Evolucional
             {
                 index = distances.IndexOf(distances.Min());
                 //Console.WriteLine("Imagen con distancia "+ distanceID+ " "+ histogramID+" " + x + ":" + distances.Min());
-                orderedList.Add(images[index]);
+                orderedList.Add(copyPopulation[index]);
                 distances.RemoveAt(index);
-                images.RemoveAt(index);
+                copyPopulation.RemoveAt(index);
             }
 
             return orderedList;
@@ -75,28 +81,32 @@ namespace Van_Gogh_Evolucional
 
         public List<Bitmap> getUglyDuckImgs(List<Bitmap> images, int histogramID, int distanceID)
         {
-            Console.WriteLine(images.Count+ " :imagenes restantes " + histogramID + " y " + distanceID);
+            List<Bitmap> copyPopulation = new List<Bitmap>();
             DistanceCalculator distanceCalculator = new DistanceCalculator();
             List<Bitmap> orderedList = new List<Bitmap>();
-
+            for (int i = 0; i < size; i++)
+            {
+                copyPopulation.Add(images[i]);
+            }
+            Console.WriteLine(copyPopulation.Count + " :imagenes restantes " + histogramID + " y " + distanceID);
             List<int> distances = new List<int>();
 
             int index = 0;
-            int total = images.Count;
+            int total = size;
             if (distanceID == 1)
             {
                 for (int i = 0; i < total; i++)
                 {
-                    Console.WriteLine("Entro aqui con: " + distanceID);
-                    distances.Add(distanceCalculator.intImgManhattanDistance(metaImage, images[i], histogramID));
+                    //Console.WriteLine("Entro aqui con: " + distanceID);
+                    distances.Add(distanceCalculator.intImgManhattanDistance(metaImage, copyPopulation[i], histogramID));
                 }
             }
             else if (distanceID == 2)
             {
                 for (int i = 0; i < total; i++)
                 {
-                    Console.WriteLine("Entro aqui con: " + distanceID);
-                    distances.Add(distanceCalculator.intImgSiONoRazaDistance(metaImage, images[i], histogramID));
+                    //Console.WriteLine("Entro aqui con: " + distanceID);
+                    distances.Add(distanceCalculator.intImgSiONoRazaDistance(metaImage, copyPopulation[i], histogramID));
                 }
             }
 
@@ -104,9 +114,9 @@ namespace Van_Gogh_Evolucional
             {
                 index = distances.IndexOf(distances.Max());
                 //Console.WriteLine("Imagen con distancia " + distanceID + " " + histogramID + " " + x + ":" + distances.Max());
-                orderedList.Add(images[index]);
+                orderedList.Add(copyPopulation[index]);
                 distances.RemoveAt(index);
-                images.RemoveAt(index);
+                copyPopulation.RemoveAt(index);
             }
 
             return orderedList;
@@ -155,46 +165,57 @@ namespace Van_Gogh_Evolucional
         }
 
         // -PENDIENTE-
-        public void paintImage(int histogramID , int distanceID)
+        public void paintImage(int histogramID , int distanceID, List<Bitmap> population,int cont)
         {
-            Console.WriteLine("ENTRE A PAINT IMAGE");
-            Console.WriteLine("Tamano: " + population.Count);
-            List<Bitmap> bestParents = getTheFittestImgs(population, histogramID, distanceID);
+            //Console.WriteLine("ENTRE A PAINT IMAGE");
+            //Console.WriteLine("Tamano: " + population.Count);
+            List<Bitmap> bestParents = null;
 
-            Console.WriteLine("Tamano: " + population.Count);
-            List<Bitmap> uglyDucks = getUglyDuckImgs(population, histogramID, distanceID);
-            List<Bitmap> newGeneration = new List<Bitmap>();
+            //Console.WriteLine("Tamano: " + population.Count);
+            List<Bitmap> uglyDucks = null;
+            List<Bitmap> newGeneration = null;
 
+            //Soy un pendejo
             Random randomGenerator = new Random();
 
-            for (int g = 0; g < amount; g++)
+            if (cont < amount)
             {
+                bestParents = getTheFittestImgs(population, histogramID, distanceID);
+                uglyDucks = getUglyDuckImgs(population, histogramID, distanceID);
+                newGeneration = new List<Bitmap>();
                 //Random numbers to determine variability factors
                 int rCrossingProb = randomGenerator.Next(0, 100);
                 int rMutationProb = randomGenerator.Next(0, 100);
                 int rGenesPrcnt = randomGenerator.Next(0, 100);
 
                 //Cross
+
                 if (rCrossingProb >= cross_prob)
                 {
                     for (int i = 0; i < bestParents.Count; i++)
                     {
                         int luckyDuck = randomGenerator.Next(0, uglyDucks.Count);
+                        int luckyParent = randomGenerator.Next(0, bestParents.Count);
                         Bitmap currentDaughter = imageCross(bestParents[i], uglyDucks[luckyDuck]);
-                        string nombre = "imagen" + i;
-                        currentDaughter.Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
+                        string nombre = "imagen_" + i + "pobl_" + cont;
+                        //currentDaughter.Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
+                        currentDaughter.Save("c:/Users/Armando/Downloads/Analisis/Mejores/" + nombre + ".jpg");
                         newGeneration.Add(currentDaughter);
                     }
                 }
 
+
                 //Survivors
-                for (int j = 0; j < uglyDucks.Count; j++)
+                while (newGeneration.Count < size)
                 {
-                    newGeneration.Add(uglyDucks[j]);
+                        for (int j = 0; j < uglyDucks.Count; j++)
+                    {
+                        newGeneration.Add(uglyDucks[j]);
+                    }
                 }
 
                 //Mutation
-                while (newGeneration.Count < population.Count)
+                while (newGeneration.Count < size)
                 {
                     if (rMutationProb >= mutation_prob)
                     {
@@ -208,8 +229,8 @@ namespace Van_Gogh_Evolucional
                         newGeneration.Add(population[luckyDude]);
                     }
                 }
-
-
+                cont++;
+                paintImage(histogramID,distanceID,newGeneration,cont);
             }
 
 
