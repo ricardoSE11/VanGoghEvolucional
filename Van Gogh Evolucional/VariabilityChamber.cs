@@ -36,7 +36,6 @@ namespace Van_Gogh_Evolucional
                 " , " + "Genes Precentage: " + genesPrcnt + " , " + "Ugly ducks: " + uglyDucks);
         }
 
-        // -PENDIENTE-
         public List<Bitmap> orderByDistance(List<Bitmap> images , int histogramID , int distanceID)
         {
             DistanceCalculator distanceCalculator = new DistanceCalculator();
@@ -68,8 +67,6 @@ namespace Van_Gogh_Evolucional
                 distances.RemoveAt(index);
                 images.RemoveAt(index);
             }
-
-            prueba(orderedList, metaImage);
 
             return orderedList;
         }
@@ -138,14 +135,5 @@ namespace Van_Gogh_Evolucional
                     que los mejores individuos vayan pasando a la siguiente generación.*/
         }
 
-        public void prueba(List<Bitmap> images , Bitmap metaImage)
-        {
-            DistanceCalculator distanceCalculator = new DistanceCalculator();
-            for (int i = 0; i < images.Count ; i++)
-            {
-                int distancia = distanceCalculator.intImgManhattanDistance(metaImage, images[i] , 1);
-                Console.WriteLine("Imagen: " + i + " - distancia: " + distancia );
-            }
-        }
     }
 }
