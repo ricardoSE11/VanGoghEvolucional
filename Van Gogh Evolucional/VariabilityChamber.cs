@@ -119,6 +119,16 @@ namespace Van_Gogh_Evolucional
         // -PENDIENTE-
         public void paintImage()
         {
+            List<Bitmap> newGeneration = null;
+            Random randCrossProbability = new Random();
+            Random randMutationProbability = new Random();
+            Random randGenePorcentage = new Random();
+            
+
+            /*if (randCrossProbability >= this.cross_prcnt)
+               -cruzar y agregar hijo a newGeneration (cantidad de veces (size/2) )*/
+
+
             /*Aquí va:
               - La transición de las generaciones
               - Las función de la mutación con un random que decide si hay que mutar o no (y % de genes a mutar)

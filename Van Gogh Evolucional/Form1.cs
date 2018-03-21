@@ -17,8 +17,6 @@ namespace Van_Gogh_Evolucional
         ImageHandler imgHandler = new ImageHandler();
         ImageGenerator imgGenerator = new ImageGenerator();
 
-        //Keeps count of the generation 
-        int generationCounter = 0;
 
         public form_MainWindow()
         {
@@ -132,6 +130,7 @@ namespace Van_Gogh_Evolucional
 
             return ok;
         }
+
         private void eraseErrorMessages()
         {
             errorProvider1.SetError(txtbox_size, "");
@@ -141,6 +140,7 @@ namespace Van_Gogh_Evolucional
             errorProvider1.SetError(txtb_mutation, "");
             errorProvider1.SetError(txtb_uducks, "");
         }
+
         private void generate()
         {
             //Generation parameters.
@@ -177,6 +177,7 @@ namespace Van_Gogh_Evolucional
                 }
             }
         }
+
         private void btn_Generate_Click(object sender, EventArgs e)
         {
             eraseErrorMessages();
