@@ -35,7 +35,7 @@ namespace Van_Gogh_Evolucional
                 " , " + "Genes Precentage: " + genesPrcnt + " , " + "Ugly ducks: " + uglyDucks);
         }
 
-        public List<Bitmap> orderByManhattanDistance(List<Bitmap> images)
+        public List<Bitmap> orderByDistance(List<Bitmap> images , int histogramID , int distanceID)
         {
             List<Bitmap> orderedList = new List<Bitmap>();
             DistanceCalculator distanceCalculator = new DistanceCalculator();
@@ -48,17 +48,38 @@ namespace Van_Gogh_Evolucional
 
                 else
                 {
-                    for (int j = 0; j < orderedList.Count; j++)
+                    //Distancia Manhattan
+                    if (distanceID == 1)
                     {
-                        int currentDistance = distanceCalculator.intImgManhattanDistance(metaImage, images[i]);
-                        int comparingDistance = distanceCalculator.intImgManhattanDistance(metaImage, orderedList[j]);
-                        int lastDistance = distanceCalculator.intImgManhattanDistance(metaImage, orderedList[orderedList.Count - 1]);
+                        for (int j = 0; j < orderedList.Count; j++)
+                        {
+                            int currentDistance = distanceCalculator.intImgManhattanDistance(metaImage, images[i], histogramID);
+                            int comparingDistance = distanceCalculator.intImgManhattanDistance(metaImage, orderedList[j], histogramID);
+                            int lastDistance = distanceCalculator.intImgManhattanDistance(metaImage, orderedList[orderedList.Count - 1], histogramID);
 
-                        if (currentDistance <= comparingDistance)
-                            orderedList.Insert(orderedList.IndexOf(orderedList[j]), images[i]);
+                            if (currentDistance <= comparingDistance)
+                                orderedList.Insert(orderedList.IndexOf(orderedList[j]), images[i]);
 
-                        if (currentDistance > lastDistance)
-                            orderedList.Add(images[i]);
+                            if (currentDistance > lastDistance)
+                                orderedList.Add(images[i]);
+                        }
+                    }
+
+                    //Distancia Si O No Raza
+                    else
+                    {
+                        for (int j = 0; j < orderedList.Count; j++)
+                        {
+                            int currentDistance = distanceCalculator.intImgSiONoRazaDistance(metaImage, images[i], histogramID);
+                            int comparingDistance = distanceCalculator.intImgSiONoRazaDistance(metaImage, orderedList[j], histogramID);
+                            int lastDistance = distanceCalculator.intImgSiONoRazaDistance(metaImage, orderedList[orderedList.Count - 1], histogramID);
+
+                            if (currentDistance <= comparingDistance)
+                                orderedList.Insert(orderedList.IndexOf(orderedList[j]), images[i]);
+
+                            if (currentDistance > lastDistance)
+                                orderedList.Add(images[i]);
+                        }
                     }
                     
                 }
