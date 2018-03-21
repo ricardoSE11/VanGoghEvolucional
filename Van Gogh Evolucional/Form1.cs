@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Drawing.Imaging;
 
 namespace Van_Gogh_Evolucional
 {
@@ -76,7 +77,7 @@ namespace Van_Gogh_Evolucional
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            this.picBox_metaImage.Image = null;
+            picBox_metaImage.Image = null;
         }
 
         private void label1_Click(object sender, EventArgs e)
