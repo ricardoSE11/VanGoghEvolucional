@@ -85,11 +85,11 @@ namespace Van_Gogh_Evolucional
 
         public int siONoRazaDistance(int[] vectorOne, int[] vectorTwo)
         {
-            int result = 0;
+            int result = vectorOne.Length;
             List<int> distances = new List<int>();
             for (int i = 0; i < vectorOne.Length; i++)
             {
-                result+=(Math.Abs(vectorOne[i] - vectorTwo[i])*i);
+                result-=vectorOne[i] = vectorTwo[i];
             }
             return result;
         }
