@@ -138,7 +138,6 @@ namespace Van_Gogh_Evolucional
             return blurredList;
         }
 
-
         public Bitmap GrayFilter(Bitmap image)
         {
             Console.WriteLine("Turning to gray the image: " + image.ToString());
@@ -169,6 +168,52 @@ namespace Van_Gogh_Evolucional
             return newImage;
 
         }
+
+        public Bitmap concatenateBitmaps(Bitmap imgOne, Bitmap imgTwo)
+        {
+            //read all images into memory
+            List<Bitmap> images = new List<Bitmap>();
+            images.Add(imgTwo);
+            images.Add(imgOne);
+            Bitmap finalImage = null;
+
+            int width = imgOne.Width * 2;
+            int height = imgOne.Height;
+
+            //create a bitmap to hold the combined image
+            finalImage = new Bitmap(width, height);
+
+            //get a graphics object from the image so we can draw on it
+            using (Graphics g = Graphics.FromImage(finalImage))
+
+            {
+                //set background color
+                g.Clear(Color.Black);
+
+                //go through each image and draw it on the final image
+                int offset = 0;
+                foreach (Bitmap image in images)
+                {
+                    g.DrawImage(image,
+                        new Rectangle(offset, 0, image.Width, image.Height));
+                    offset += image.Width;
+                }
+            }
+            if (finalImage.Equals(null))
+                Console.WriteLine("Ya llegué aquí: " + finalImage.ToString());
+
+            return finalImage;
+        }
+
+        public Bitmap cropAtRectangle(Bitmap b, int width, int height)
+        {
+            Rectangle r = new Rectangle(0, 0, width, height);
+            Bitmap nb = new Bitmap(r.Width, r.Height);
+            Graphics g = Graphics.FromImage(nb);
+            g.DrawImage(b, -r.X, -r.Y);
+            return nb;
+        }
+
 
     }
 }
