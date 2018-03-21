@@ -154,18 +154,18 @@ namespace Van_Gogh_Evolucional
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             //List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
             Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
-            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population, metaImage , amount);
+            VariabilityChamber vChamber = new VariabilityChamber(size,cross, mutation, genes, uglyDucks, population, metaImage , amount);
             if (ckBoxColorHistogram.Checked)
             {
                 if (ckBoxManhattan.Checked)
                 {
                     //vChamber.getTheFittestImgs(population,1,1);
-                    vChamber.paintImage(1, 1);
+                    vChamber.paintImage(1, 1,population,0);
                 }
                 else
                 {
                     //vChamber.getTheFittestImgs(population, 1, 2);
-                    vChamber.paintImage(1, 2);
+                    vChamber.paintImage(1, 2,population,0);
                 }
             }
             if(ckBoxLBPHistogram.Checked)
@@ -173,12 +173,12 @@ namespace Van_Gogh_Evolucional
                 if (ckBoxManhattan.Checked)
                 {
                     //vChamber.getTheFittestImgs(population, 2, 1);
-                    vChamber.paintImage(2, 1);
+                    vChamber.paintImage(2, 1, population, 0);
                 }
                 else
                 {
                     //vChamber.getTheFittestImgs(population, 2, 2);
-                    vChamber.paintImage(2, 2);
+                    vChamber.paintImage(2, 2, population, 0);
                 }
             }
         }
