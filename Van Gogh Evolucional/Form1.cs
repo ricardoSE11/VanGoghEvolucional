@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Van_Gogh_Evolucional
 {
@@ -99,7 +100,52 @@ namespace Van_Gogh_Evolucional
 
         }
 
-        private void btn_Generate_Click(object sender, EventArgs e)
+        private bool validateFields()
+        {
+            bool ok=true;
+            if (txtbox_size.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtbox_size, "Enter the size");
+            }
+            if (txtb_amount.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtb_amount, "Enter the amount");
+            }
+            if (txtb_cross.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtb_cross, "Enter the cross");
+            }
+            if (txtb_genes.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtb_genes, "Enter the genes");
+            }
+            if (txtb_mutation.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtb_mutation, "Enter the mutation");
+            }
+            if (txtb_uducks.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtb_uducks, "Enter the ugly ducks");
+            }
+
+            return ok;
+        }
+        private void eraseErrorMessages()
+        {
+            errorProvider1.SetError(txtbox_size, "");
+            errorProvider1.SetError(txtb_amount, "");
+            errorProvider1.SetError(txtb_cross, "");
+            errorProvider1.SetError(txtb_genes, "");
+            errorProvider1.SetError(txtb_mutation, "");
+            errorProvider1.SetError(txtb_uducks, "");
+        }
+        private void generate()
         {
             //Generation parameters.
             int size = int.Parse(txtbox_size.Text);
@@ -108,13 +154,23 @@ namespace Van_Gogh_Evolucional
             int genes = int.Parse(txtb_genes.Text);
             int mutation = int.Parse(txtb_mutation.Text);
             int uglyDucks = int.Parse(txtb_uducks.Text);
-
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             //List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
 
             Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
-            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population , metaImage);
-       
+            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population, metaImage);
+
+        }
+        private void btn_Generate_Click(object sender, EventArgs e)
+        {
+            eraseErrorMessages();
+            if (validateFields())
+            {
+                Thread thread = new Thread(generate);
+                thread.Start();
+            }
+            
+          
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)

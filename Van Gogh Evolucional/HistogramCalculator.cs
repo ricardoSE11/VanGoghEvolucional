@@ -88,8 +88,6 @@ namespace Van_Gogh_Evolucional
             Console.WriteLine("Finish LBPHistogram");
             return LBPHistogram;
         }
-
     }
-
 }
 
