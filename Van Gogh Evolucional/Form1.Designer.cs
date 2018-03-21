@@ -66,7 +66,7 @@
             // 
             ckEnhanceVisual.AutoSize = true;
             ckEnhanceVisual.Location = new System.Drawing.Point(669, 594);
-            ckEnhanceVisual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ckEnhanceVisual.Margin = new System.Windows.Forms.Padding(4);
             ckEnhanceVisual.Name = "ckEnhanceVisual";
             ckEnhanceVisual.Size = new System.Drawing.Size(86, 21);
             ckEnhanceVisual.TabIndex = 25;
@@ -270,7 +270,7 @@
             // 
             this.ckBoxManhattan.AutoSize = true;
             this.ckBoxManhattan.Location = new System.Drawing.Point(525, 473);
-            this.ckBoxManhattan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckBoxManhattan.Margin = new System.Windows.Forms.Padding(4);
             this.ckBoxManhattan.Name = "ckBoxManhattan";
             this.ckBoxManhattan.Size = new System.Drawing.Size(97, 21);
             this.ckBoxManhattan.TabIndex = 21;
@@ -282,7 +282,7 @@
             // 
             this.ckBoxSiONoRaza.AutoSize = true;
             this.ckBoxSiONoRaza.Location = new System.Drawing.Point(789, 471);
-            this.ckBoxSiONoRaza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckBoxSiONoRaza.Margin = new System.Windows.Forms.Padding(4);
             this.ckBoxSiONoRaza.Name = "ckBoxSiONoRaza";
             this.ckBoxSiONoRaza.Size = new System.Drawing.Size(104, 21);
             this.ckBoxSiONoRaza.TabIndex = 22;
@@ -293,7 +293,7 @@
             // 
             this.ckBoxColorHistogram.AutoSize = true;
             this.ckBoxColorHistogram.Location = new System.Drawing.Point(525, 528);
-            this.ckBoxColorHistogram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckBoxColorHistogram.Margin = new System.Windows.Forms.Padding(4);
             this.ckBoxColorHistogram.Name = "ckBoxColorHistogram";
             this.ckBoxColorHistogram.Size = new System.Drawing.Size(131, 21);
             this.ckBoxColorHistogram.TabIndex = 23;
@@ -304,7 +304,7 @@
             // 
             this.ckBoxLBPHistogram.AutoSize = true;
             this.ckBoxLBPHistogram.Location = new System.Drawing.Point(789, 528);
-            this.ckBoxLBPHistogram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckBoxLBPHistogram.Margin = new System.Windows.Forms.Padding(4);
             this.ckBoxLBPHistogram.Name = "ckBoxLBPHistogram";
             this.ckBoxLBPHistogram.Size = new System.Drawing.Size(122, 21);
             this.ckBoxLBPHistogram.TabIndex = 24;

@@ -171,6 +171,7 @@ namespace Van_Gogh_Evolucional
 
         public Bitmap concatenateBitmaps(Bitmap imgOne, Bitmap imgTwo)
         {
+            
             //read all images into memory
             List<Bitmap> images = new List<Bitmap>();
             images.Add(imgTwo);

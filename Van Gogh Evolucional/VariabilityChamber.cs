@@ -70,7 +70,7 @@ namespace Van_Gogh_Evolucional
             for (int x=0;x< 10; x++)
             {
                 index = distances.IndexOf(distances.Min());
-                //Console.WriteLine("Imagen con distancia "+ distanceID+ " "+ histogramID+" " + x + ":" + distances.Min());
+                Console.WriteLine("Imagen con distancia min"+ distanceID+ " "+ histogramID+" " + x + ":" + distances.Min());
                 orderedList.Add(copyPopulation[index]);
                 distances.RemoveAt(index);
                 copyPopulation.RemoveAt(index);
@@ -113,7 +113,7 @@ namespace Van_Gogh_Evolucional
             for (int x = 0; x < ugly_Ducks; x++)
             {
                 index = distances.IndexOf(distances.Max());
-                //Console.WriteLine("Imagen con distancia " + distanceID + " " + histogramID + " " + x + ":" + distances.Max());
+                Console.WriteLine("Imagen con distancia max" + distanceID + " " + histogramID + " " + x + ":" + distances.Max());
                 orderedList.Add(copyPopulation[index]);
                 distances.RemoveAt(index);
                 copyPopulation.RemoveAt(index);
@@ -125,12 +125,58 @@ namespace Van_Gogh_Evolucional
         public Bitmap imageCross(Bitmap imageOne , Bitmap imageTwo)
         {
             //Lógica implacable de cruce
-            Bitmap daughter = null;
+            Bitmap daughter = new Bitmap(imageOne.Width, imageOne.Height); ;
 
             ImageHandler imgHandler = new ImageHandler();
-            imageOne = imgHandler.cropAtRectangle(imageOne, 50, 100);
-            imageTwo = imgHandler.cropAtRectangle(imageTwo, 50, 100);
-            daughter = imgHandler.concatenateBitmaps(imageOne, imageTwo);
+            Random rand = new Random();
+            for (int i=0;i < imageOne.Width;i++)
+            {
+                for (int j = 0; j < imageOne.Width; j++)
+                {
+                    if(imageOne.GetPixel(i,j).Equals(metaImage.GetPixel(i,j)))
+                    {
+                        //Console.WriteLine("Igual a la una");
+                        int a = imageOne.GetPixel(i, j).A;
+                        int r = imageOne.GetPixel(i, j).R;
+                        int g = imageOne.GetPixel(i, j).G;
+                        int b = imageOne.GetPixel(i, j).B;
+                        daughter.SetPixel(i, j, Color.FromArgb(a, r, g, b));
+                    }
+                    if (imageTwo.GetPixel(i, j).Equals(metaImage.GetPixel(i, j)))
+                    {
+                        //Console.WriteLine("Igual a la dos");
+                        int a = imageTwo.GetPixel(i, j).A;
+                        int r = imageTwo.GetPixel(i, j).R;
+                        int g = imageTwo.GetPixel(i, j).G;
+                        int b = imageTwo.GetPixel(i, j).B;
+                        daughter.SetPixel(i, j, Color.FromArgb(a, r, g, b));
+                    }
+                    else
+                    {
+                        //Console.WriteLine("ni merga");
+                        int c = rand.Next(0,2);
+                        if(c==1)
+                        {
+                            int a = imageOne.GetPixel(i, j).A;
+                            int r = imageOne.GetPixel(i, j).R;
+                            int g = imageOne.GetPixel(i, j).G;
+                            int b = imageOne.GetPixel(i, j).B;
+                            daughter.SetPixel(i, j, Color.FromArgb(a, r, g, b));
+                        }
+                        else
+                        {
+                            int a = imageTwo.GetPixel(i, j).A;
+                            int r = imageTwo.GetPixel(i, j).R;
+                            int g = imageTwo.GetPixel(i, j).G;
+                            int b = imageTwo.GetPixel(i, j).B;
+                            daughter.SetPixel(i, j, Color.FromArgb(a, r, g, b));
+                        }
+                    }
+                }
+            }
+            //imageOne = imgHandler.cropAtRectangle(imageOne, 50, 100);
+            //imageTwo = imgHandler.cropAtRectangle(imageTwo, 50, 100);
+            //daughter = imgHandler.concatenateBitmaps(imageOne, imageTwo);
             daughter = imgHandler.resizeImage(daughter, 100, 100);
             return daughter;
         }
