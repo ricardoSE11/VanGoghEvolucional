@@ -165,12 +165,13 @@ namespace Van_Gogh_Evolucional
                 int rMutationProb = randomGenerator.Next(0, 100);
                 int rGenesPrcnt = randomGenerator.Next(0, 100);
 
-                //Cruce
+                //Cross
                 if (rCrossingProb >= cross_prob)
                 {
                     for (int i = 0; i < bestParents.Count; i++)
                     {
-                        Bitmap currentDaughter = imageCross(bestParents[i], uglyDucks[i]);
+                        int luckyDuck = randomGenerator.Next(0, uglyDucks.Count);
+                        Bitmap currentDaughter = imageCross(bestParents[i], uglyDucks[luckyDuck]);
                         newGeneration.Add(currentDaughter);
                     }
                 }
@@ -181,9 +182,9 @@ namespace Van_Gogh_Evolucional
                     newGeneration.Add(uglyDucks[j]);
                 }
 
+                //Mutation
                 while (newGeneration.Count < population.Count)
                 {
-                    //Mutacion
                     if (rMutationProb >= mutation_prob)
                     {
                         int luckyDude = randomGenerator.Next(0, population.Count);
@@ -200,8 +201,6 @@ namespace Van_Gogh_Evolucional
 
             }
 
-            /*if (randCrossProbability >= this.cross_prob)
-               -cruzar y agregar hijo a newGeneration (cantidad de veces (size/2) )*/
 
 
             /*Aquí va:
