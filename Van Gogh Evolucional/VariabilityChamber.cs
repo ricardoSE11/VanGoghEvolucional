@@ -17,7 +17,7 @@ namespace Van_Gogh_Evolucional
         int mutation_prcnt;
         int genes_prcnt;
         int ugly_Ducks;
-
+        DistanceCalculator distanceCalculator; 
         //Constructors
         public VariabilityChamber()
         {}
@@ -30,6 +30,7 @@ namespace Van_Gogh_Evolucional
             ugly_Ducks = uglyDucks;
             population = imgPopulation;
             metaImage = metaImg;
+            distanceCalculator = new DistanceCalculator();
             Console.WriteLine("Creating a Variability Chamber with the following values: " 
                 + "Cross Percentage: " + crossPrcnt + " , " + "Mutation Percentage: " + mutationPrcnt +
                 " , " + "Genes Precentage: " + genesPrcnt + " , " + "Ugly ducks: " + uglyDucks);
@@ -38,7 +39,6 @@ namespace Van_Gogh_Evolucional
         public List<Bitmap> orderByDistance(List<Bitmap> images , int histogramID , int distanceID)
         {
             List<Bitmap> orderedList = new List<Bitmap>();
-            DistanceCalculator distanceCalculator = new DistanceCalculator();
 
             for (int i = 0; i < images.Count; i++)
             {
@@ -84,6 +84,7 @@ namespace Van_Gogh_Evolucional
                     
                 }
             }
+            prueba(orderedList, metaImage);
             return orderedList;
         }
 
@@ -111,6 +112,15 @@ namespace Van_Gogh_Evolucional
               - Patitos feos que tienen que pasar a la siguiente generación para ser cruzados.
                     + El cruce, creo que yo, que puede ser aleatorio. Ya que, la distancia es que nos va a asegurar
                     que los mejores individuos vayan pasando a la siguiente generación.*/
+        }
+
+        public void prueba(List<Bitmap> images , Bitmap metaImage)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                int distancia = distanceCalculator.intImgManhattanDistance(metaImage, images[i] , 1);
+                Console.WriteLine("Imagen: " + i + " - distancia: " + distancia );
+            }
         }
     }
 }
