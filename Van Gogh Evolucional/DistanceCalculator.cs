@@ -51,23 +51,36 @@ namespace Van_Gogh_Evolucional
         }
 
         //Accuracy is going to be lost
-        public int intImgManhattanDistance(Bitmap imageOne, Bitmap imageTwo)
+        public int intImgManhattanDistance(Bitmap imageOne, Bitmap imageTwo , int histogramID)
         {
-            int result = 0;
+            if (histogramID == 1)
+            {
+                int result = 0;
+                int redDistance = 0;
+                int greenDistance = 0;
+                int blueDistance = 0;
 
-            int redDistance = 0;
-            int greenDistance = 0;
-            int blueDistance = 0;
+                List<int[]> histogramOne = histogramCalculator.getColorHistogram(imageOne);
+                List<int[]> histogramTwo = histogramCalculator.getColorHistogram(imageTwo);
 
-            List<int[]> histogramOne = histogramCalculator.getColorHistogram(imageOne);
-            List<int[]> histogramTwo = histogramCalculator.getColorHistogram(imageTwo);
+                redDistance = manhattanDistance(histogramOne[0], histogramTwo[0]);
+                greenDistance = manhattanDistance(histogramOne[1], histogramTwo[1]);
+                blueDistance = manhattanDistance(histogramOne[2], histogramTwo[2]);
+                Console.WriteLine("El usuario eligió ColorHistogram con Manhattan ");
+                result = redDistance + greenDistance + blueDistance;
+                return result;
+            }
 
-            redDistance = manhattanDistance(histogramOne[0], histogramTwo[0]);
-            greenDistance = manhattanDistance(histogramOne[1], histogramTwo[1]);
-            blueDistance = manhattanDistance(histogramOne[2], histogramTwo[2]);
+            else
+            {
+                int result = 0;
+                int[] histogramOne = histogramCalculator.getLBPHistogram(imageOne);
+                int[] histogramTwo = histogramCalculator.getLBPHistogram(imageTwo);
+                result = manhattanDistance(histogramOne, histogramTwo);
 
-            result = redDistance + greenDistance + blueDistance;
-            return result;
+                Console.WriteLine("El usuario eligió LBP con Manhattan ");
+                return result;
+            }
         }
 
         public int siONoRazaDistance(int[] vectorOne, int[] vectorTwo)
@@ -82,14 +95,37 @@ namespace Van_Gogh_Evolucional
             }
             return result;
         }
-        public int intImgSiONoRazaDistance(Bitmap imageOne, Bitmap imageTwo)
-        {
-            int result = 0;
-            int[] histogramOne = histogramCalculator.getLBPHistogram(imageOne);
-            int[] histogramTwo = histogramCalculator.getLBPHistogram(imageTwo);
-            result = siONoRazaDistance(histogramOne, histogramTwo);
 
-            return result;
+        public int intImgSiONoRazaDistance(Bitmap imageOne, Bitmap imageTwo , int histogramID)
+        {
+            if (histogramID == 1)
+            {
+                int result = 0;
+                int redDistance = 0;
+                int greenDistance = 0;
+                int blueDistance = 0;
+
+                List<int[]> histogramOne = histogramCalculator.getColorHistogram(imageOne);
+                List<int[]> histogramTwo = histogramCalculator.getColorHistogram(imageTwo);
+
+                redDistance = siONoRazaDistance(histogramOne[0], histogramTwo[0]);
+                greenDistance = siONoRazaDistance(histogramOne[1], histogramTwo[1]);
+                blueDistance = siONoRazaDistance(histogramOne[2], histogramTwo[2]);
+                Console.WriteLine("El usuario eligió ColorHistogram con Si o No Raza? ");
+                result = redDistance + greenDistance + blueDistance;
+                return result;
+            }
+
+            else
+            {
+                int result = 0;
+                int[] histogramOne = histogramCalculator.getLBPHistogram(imageOne);
+                int[] histogramTwo = histogramCalculator.getLBPHistogram(imageTwo);
+                result = siONoRazaDistance(histogramOne, histogramTwo);
+
+                Console.WriteLine("El usuario eligió LBP con Si o No Raza? ");
+                return result;
+            }
         }
 
 
