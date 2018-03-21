@@ -154,27 +154,27 @@ namespace Van_Gogh_Evolucional
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             //List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
             Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
-            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population, metaImage);
+            VariabilityChamber vChamber = new VariabilityChamber(cross, mutation, genes, uglyDucks, population, metaImage , amount);
             if (ckBoxColorHistogram.Checked)
             {
                 if (ckBoxManhattan.Checked)
                 {
-                    vChamber.orderByDistance(population,1,1);
+                    vChamber.getTheFittestImgs(population,1,1);
                 }
                 else
                 {
-                    vChamber.orderByDistance(population, 1, 2);
+                    vChamber.getTheFittestImgs(population, 1, 2);
                 }
             }
             if(ckBoxLBPHistogram.Checked)
             {
                 if (ckBoxManhattan.Checked)
                 {
-                    vChamber.orderByDistance(population, 2, 1);
+                    vChamber.getTheFittestImgs(population, 2, 1);
                 }
                 else
                 {
-                    vChamber.orderByDistance(population, 2, 2);
+                    vChamber.getTheFittestImgs(population, 2, 2);
                 }
             }
         }
