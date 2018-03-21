@@ -140,7 +140,7 @@ namespace Van_Gogh_Evolucional
 
         public Bitmap GrayFilter(Bitmap image)
         {
-            Console.WriteLine("Turning to gray the image: " + image.ToString());
+            //Console.WriteLine("Turning to gray the image: " + image.ToString());
             return GrayImage(image);
         }
 

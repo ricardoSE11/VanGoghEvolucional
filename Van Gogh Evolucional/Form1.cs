@@ -159,22 +159,26 @@ namespace Van_Gogh_Evolucional
             {
                 if (ckBoxManhattan.Checked)
                 {
-                    vChamber.getTheFittestImgs(population,1,1);
+                    //vChamber.getTheFittestImgs(population,1,1);
+                    vChamber.paintImage(1, 1);
                 }
                 else
                 {
-                    vChamber.getTheFittestImgs(population, 1, 2);
+                    //vChamber.getTheFittestImgs(population, 1, 2);
+                    vChamber.paintImage(1, 2);
                 }
             }
             if(ckBoxLBPHistogram.Checked)
             {
                 if (ckBoxManhattan.Checked)
                 {
-                    vChamber.getTheFittestImgs(population, 2, 1);
+                    //vChamber.getTheFittestImgs(population, 2, 1);
+                    vChamber.paintImage(2, 1);
                 }
                 else
                 {
-                    vChamber.getTheFittestImgs(population, 2, 2);
+                    //vChamber.getTheFittestImgs(population, 2, 2);
+                    vChamber.paintImage(2, 2);
                 }
             }
         }

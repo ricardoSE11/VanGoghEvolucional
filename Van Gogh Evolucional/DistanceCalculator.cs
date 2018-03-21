@@ -14,7 +14,7 @@ namespace Van_Gogh_Evolucional
         public DistanceCalculator()
         {
             histogramCalculator = new HistogramCalculator();
-            Console.WriteLine(" - Instantiating a Distance Calculator -");
+            Console.WriteLine("- Instantiating a Distance Calculator -");
         }
 
         public int manhattanDistance(int[] vectorOne, int[] vectorTwo)
@@ -66,7 +66,7 @@ namespace Van_Gogh_Evolucional
                 redDistance = manhattanDistance(histogramOne[0], histogramTwo[0]);
                 greenDistance = manhattanDistance(histogramOne[1], histogramTwo[1]);
                 blueDistance = manhattanDistance(histogramOne[2], histogramTwo[2]);
-                Console.WriteLine("El usuario eligió ColorHistogram con Manhattan [R =" + result + "]");
+                //Console.WriteLine("El usuario eligió ColorHistogram con Manhattan [R =" + result + "]");
                 result = redDistance + greenDistance + blueDistance;
                 return result;
             }
@@ -78,7 +78,7 @@ namespace Van_Gogh_Evolucional
                 int[] histogramTwo = histogramCalculator.getLBPHistogram(imageTwo);
                 result = manhattanDistance(histogramOne, histogramTwo);
 
-                Console.WriteLine("El usuario eligió LBP con Manhattan ");
+                //Console.WriteLine("El usuario eligió LBP con Manhattan ");
                 return result;
             }
         }
@@ -110,7 +110,7 @@ namespace Van_Gogh_Evolucional
                 redDistance = siONoRazaDistance(histogramOne[0], histogramTwo[0]);
                 greenDistance = siONoRazaDistance(histogramOne[1], histogramTwo[1]);
                 blueDistance = siONoRazaDistance(histogramOne[2], histogramTwo[2]);
-                Console.WriteLine("El usuario eligió ColorHistogram con Si o No Raza? ");
+                //Console.WriteLine("El usuario eligió ColorHistogram con Si o No Raza? ");
                 result = redDistance + greenDistance + blueDistance;
             }
 
@@ -120,7 +120,7 @@ namespace Van_Gogh_Evolucional
                 int[] histogramTwo = histogramCalculator.getLBPHistogram(imageTwo);
                 result = siONoRazaDistance(histogramOne, histogramTwo);
 
-                Console.WriteLine("El usuario eligió LBP con Si o No Raza? ");
+                //Console.WriteLine("El usuario eligió LBP con Si o No Raza? ");
             }
             return result;
         }
