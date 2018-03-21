@@ -17,6 +17,7 @@ namespace Van_Gogh_Evolucional
         int mutation_prcnt;
         int genes_prcnt;
         int ugly_Ducks;
+
         //Constructors
         public VariabilityChamber()
         {}
@@ -29,16 +30,18 @@ namespace Van_Gogh_Evolucional
             ugly_Ducks = uglyDucks;
             population = imgPopulation;
             metaImage = metaImg;
-            
+
             Console.WriteLine("Creating a Variability Chamber with the following values: " 
                 + "Cross Percentage: " + crossPrcnt + " , " + "Mutation Percentage: " + mutationPrcnt +
                 " , " + "Genes Precentage: " + genesPrcnt + " , " + "Ugly ducks: " + uglyDucks);
         }
 
+        // -PENDIENTE-
         public List<Bitmap> orderByDistance(List<Bitmap> images , int histogramID , int distanceID)
         {
             DistanceCalculator distanceCalculator = new DistanceCalculator();
             List<Bitmap> orderedList = new List<Bitmap>();
+
             List<int> distances = new List<int>();
             int index = 0;
             int total = images.Count;
@@ -65,24 +68,55 @@ namespace Van_Gogh_Evolucional
                 distances.RemoveAt(index);
                 images.RemoveAt(index);
             }
+
+            prueba(orderedList, metaImage);
+
             return orderedList;
         }
 
-        // -PENDIENTE-
         public Bitmap imageCross(Bitmap imageOne , Bitmap imageTwo)
         {
             //Lógica implacable de cruce
-            return imageOne; //mientras tanto
+            Bitmap daughter = null;
+
+            ImageHandler imgHandler = new ImageHandler();
+            imageOne = imgHandler.cropAtRectangle(imageOne, 50, 100);
+            imageTwo = imgHandler.cropAtRectangle(imageTwo, 50, 100);
+            daughter = imgHandler.concatenateBitmaps(imageOne, imageTwo);
+            daughter = imgHandler.resizeImage(daughter, 100, 100);
+            return daughter;
+        }
+
+        public Bitmap mutateImage(Bitmap image , int genesPercentage)
+        {
+            Bitmap newImage = null;
+
+            int totalGenes = image.Width * image.Height;
+            int genesToMutate = totalGenes * (genesPercentage / 100);
+            int changedPixels = 0;
+            Random rand = new Random();
+            Random randTwo = new Random();
+
+            while (changedPixels != genesToMutate)
+            {
+                int x = randTwo.Next(0, image.Width);
+                int y = randTwo.Next(0, image.Height);
+
+                int a = rand.Next(256);
+                int r = rand.Next(256);
+                int g = rand.Next(256);
+                int b = rand.Next(256);
+
+                //Set ARGB value
+                newImage.SetPixel(x, y, Color.FromArgb(a, r, g, b));
+                changedPixels++;
+            }
+
+
+            return newImage; //mientras tanto
         }
 
         // -PENDIENTE-
-        public Bitmap imageMutation(Bitmap image , int genesPercentage)
-        {
-            //Lógica implacable de mutación
-
-            return image; //mientras tanto
-        }
-
         public void paintImage()
         {
             /*Aquí va:
@@ -92,6 +126,16 @@ namespace Van_Gogh_Evolucional
               - Patitos feos que tienen que pasar a la siguiente generación para ser cruzados.
                     + El cruce, creo que yo, que puede ser aleatorio. Ya que, la distancia es que nos va a asegurar
                     que los mejores individuos vayan pasando a la siguiente generación.*/
+        }
+
+        public void prueba(List<Bitmap> images , Bitmap metaImage)
+        {
+            DistanceCalculator distanceCalculator = new DistanceCalculator();
+            for (int i = 0; i < images.Count ; i++)
+            {
+                int distancia = distanceCalculator.intImgManhattanDistance(metaImage, images[i] , 1);
+                Console.WriteLine("Imagen: " + i + " - distancia: " + distancia );
+            }
         }
     }
 }
