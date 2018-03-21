@@ -39,6 +39,7 @@ namespace Van_Gogh_Evolucional
         //10 mejores imagenes
         public List<Bitmap> getTheFittestImgs(List<Bitmap> images , int histogramID , int distanceID)
         {
+            Console.WriteLine(population.Count + ": cantidad de padres buenos");
             DistanceCalculator distanceCalculator = new DistanceCalculator();
             List<Bitmap> orderedList = new List<Bitmap>();
 
@@ -63,7 +64,7 @@ namespace Van_Gogh_Evolucional
             for (int x=0;x< 10; x++)
             {
                 index = distances.IndexOf(distances.Min());
-                Console.WriteLine("Imagen con distancia "+ distanceID+ " "+ histogramID+" " + x + ":" + distances.Min());
+                //Console.WriteLine("Imagen con distancia "+ distanceID+ " "+ histogramID+" " + x + ":" + distances.Min());
                 orderedList.Add(images[index]);
                 distances.RemoveAt(index);
                 images.RemoveAt(index);
@@ -74,16 +75,19 @@ namespace Van_Gogh_Evolucional
 
         public List<Bitmap> getUglyDuckImgs(List<Bitmap> images, int histogramID, int distanceID)
         {
+            Console.WriteLine(images.Count+ " :imagenes restantes " + histogramID + " y " + distanceID);
             DistanceCalculator distanceCalculator = new DistanceCalculator();
             List<Bitmap> orderedList = new List<Bitmap>();
 
             List<int> distances = new List<int>();
+
             int index = 0;
             int total = images.Count;
             if (distanceID == 1)
             {
                 for (int i = 0; i < total; i++)
                 {
+                    Console.WriteLine("Entro aqui con: " + distanceID);
                     distances.Add(distanceCalculator.intImgManhattanDistance(metaImage, images[i], histogramID));
                 }
             }
@@ -91,6 +95,7 @@ namespace Van_Gogh_Evolucional
             {
                 for (int i = 0; i < total; i++)
                 {
+                    Console.WriteLine("Entro aqui con: " + distanceID);
                     distances.Add(distanceCalculator.intImgSiONoRazaDistance(metaImage, images[i], histogramID));
                 }
             }
@@ -98,7 +103,7 @@ namespace Van_Gogh_Evolucional
             for (int x = 0; x < ugly_Ducks; x++)
             {
                 index = distances.IndexOf(distances.Max());
-                Console.WriteLine("Imagen con distancia " + distanceID + " " + histogramID + " " + x + ":" + distances.Max());
+                //Console.WriteLine("Imagen con distancia " + distanceID + " " + histogramID + " " + x + ":" + distances.Max());
                 orderedList.Add(images[index]);
                 distances.RemoveAt(index);
                 images.RemoveAt(index);
@@ -152,7 +157,11 @@ namespace Van_Gogh_Evolucional
         // -PENDIENTE-
         public void paintImage(int histogramID , int distanceID)
         {
+            Console.WriteLine("ENTRE A PAINT IMAGE");
+            Console.WriteLine("Tamano: " + population.Count);
             List<Bitmap> bestParents = getTheFittestImgs(population, histogramID, distanceID);
+
+            Console.WriteLine("Tamano: " + population.Count);
             List<Bitmap> uglyDucks = getUglyDuckImgs(population, histogramID, distanceID);
             List<Bitmap> newGeneration = new List<Bitmap>();
 
@@ -172,6 +181,8 @@ namespace Van_Gogh_Evolucional
                     {
                         int luckyDuck = randomGenerator.Next(0, uglyDucks.Count);
                         Bitmap currentDaughter = imageCross(bestParents[i], uglyDucks[luckyDuck]);
+                        string nombre = "imagen" + i;
+                        currentDaughter.Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
                         newGeneration.Add(currentDaughter);
                     }
                 }
