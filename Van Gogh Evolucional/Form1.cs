@@ -159,12 +159,12 @@ namespace Van_Gogh_Evolucional
             {
                 if (ckBoxManhattan.Checked)
                 {
-                    //vChamber.getTheFittestImgs(population,1,1);
+                    //vChamber.getBestAndWorstImgs(population,1,1);
                     vChamber.paintImage(1, 1,population,0);
                 }
                 else
                 {
-                    //vChamber.getTheFittestImgs(population, 1, 2);
+                    //vChamber.getBestAndWorstImgs(population, 1, 2);
                     vChamber.paintImage(1, 2,population,0);
                 }
             }
@@ -172,12 +172,12 @@ namespace Van_Gogh_Evolucional
             {
                 if (ckBoxManhattan.Checked)
                 {
-                    //vChamber.getTheFittestImgs(population, 2, 1);
+                    //vChamber.getBestAndWorstImgs(population, 2, 1);
                     vChamber.paintImage(2, 1, population, 0);
                 }
                 else
                 {
-                    //vChamber.getTheFittestImgs(population, 2, 2);
+                    //vChamber.getBestAndWorstImgs(population, 2, 2);
                     vChamber.paintImage(2, 2, population, 0);
                 }
             }
@@ -188,8 +188,9 @@ namespace Van_Gogh_Evolucional
             eraseErrorMessages();
             if (validateFields())
             {
-                Thread thread = new Thread(generate);
-                thread.Start();
+                generate();
+                //Thread thread = new Thread(generate);
+                //thread.Start();
             }
             
           
@@ -201,6 +202,11 @@ namespace Van_Gogh_Evolucional
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckBoxLBPHistogram_CheckedChanged(object sender, EventArgs e)
         {
 
         }
