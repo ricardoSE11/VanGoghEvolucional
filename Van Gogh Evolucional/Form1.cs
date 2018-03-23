@@ -154,6 +154,7 @@ namespace Van_Gogh_Evolucional
             List<Bitmap> population = imgGenerator.generateRandomImages(size);
             //List<Bitmap> blurredPopulation = imgHandler.blurImages(population);
             Bitmap metaImage = (Bitmap)picBox_metaImage.Image;
+            metaImage = imgHandler.resizeImage(metaImage , 100 , 100);
             VariabilityChamber vChamber = new VariabilityChamber(size,cross, mutation, genes, uglyDucks, population, metaImage , amount);
             if (ckBoxColorHistogram.Checked)
             {
