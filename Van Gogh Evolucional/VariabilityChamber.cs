@@ -181,7 +181,7 @@ namespace Van_Gogh_Evolucional
                 for (int j = 0; j < imageOne.Width; j++)
                 {
                     int prob = rand.Next(0, 255);
-                    if (prob<=10)
+                    if (prob<=2)
                     {
                         int a = rand.Next(256);//bestColor(imageOne, imageTwo, "A", i, j);
                         int r = bestColor(imageOne, imageTwo, "R", i, j);
@@ -269,11 +269,11 @@ namespace Van_Gogh_Evolucional
                 Console.WriteLine("Hizo los mas noobs  " + uglyDucks.Count);
 
                 newGeneration = new List<Bitmap>();
-                for (int i = 0; i < bestParents.Count; i++)
-                {
-                    string nombre = "imagen_" + i + "_pobl_" + cont;
-                    bestParents[i].Save("e:/Analisis de Algoritmos/Pruebas/" + nombre + ".jpg");
-                }
+
+                string nombre = "imagen_" + 1 + "_pobl_" + cont;
+                //currentDaughter.Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
+                bestParents[0].Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
+
                 for (int i = 0; i < uglyDucks.Count; i++)
                 {
                     newGeneration.Add(uglyDucks[i]);
@@ -290,7 +290,7 @@ namespace Van_Gogh_Evolucional
                     //Cross
                     if (rCrossingProb >= cross_prob)
                     {
-                        Console.WriteLine("Cruce rikolino");
+                        //Console.WriteLine("Cruce rikolino");
                         int luckyDuck = randomGenerator.Next(0, population.Count);
                         int luckyParent = randomGenerator.Next(0, population.Count);
                         Bitmap currentDaughter = imageCross(population[luckyParent], population[luckyDuck]);
