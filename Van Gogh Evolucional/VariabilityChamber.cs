@@ -251,8 +251,49 @@ namespace Van_Gogh_Evolucional
             return newImage; //mientras tanto
         }
 
+        public Bitmap bestFromList(List<Bitmap> images , int histogramID , int distanceID , Bitmap promisingDude)
+        {
+            DistanceCalculator distanceCalculator = new DistanceCalculator();
+            List<Bitmap> copyPopulation = new List<Bitmap>();
+            List<int> distances = new List<int>();
+            int index = 0;
+            List<Bitmap> bestDudes = new List<Bitmap>();
+
+            copyPopulation.Add(promisingDude);
+            for (int i = 0; i < images.Count ; i++)
+            {
+                copyPopulation.Add(images[i]);
+            }
+
+            if (distanceID == 1)
+            {
+                //Console.WriteLine(" Prueba 305454 "+copyPopulation[0].ToString());
+                for (int i = 0; i < images.Count ; i++)
+                {
+                    distances.Add(distanceCalculator.intImgManhattanDistance(metaImage, copyPopulation[i], histogramID));
+                }
+            }
+            else if (distanceID == 2)
+            {
+                for (int i = 0; i < images.Count; i++)
+                {
+                    distances.Add(distanceCalculator.intImgSiONoRazaDistance(metaImage, copyPopulation[i], histogramID));
+                }
+            }
+
+            for (int x = 0; x < images.Count ; x++)
+            {
+                index = distances.IndexOf(distances.Min());
+                Console.WriteLine("Metodo bestOf: " + distanceID + " " + histogramID + " " + x + ":" + distances.Min());
+                bestDudes.Add(copyPopulation[index]);
+                distances.RemoveAt(index);
+                copyPopulation.RemoveAt(index);
+            }
+            return bestDudes[0];
+        }
+
         // -PENDIENTE-
-        public void paintImage(int histogramID , int distanceID, List<Bitmap> population,int cont)
+        public void paintImage(int histogramID , int distanceID, List<Bitmap> population, int cont , int cromosomesCounter)
         {
             Console.WriteLine("Generacion " + cont);
             Console.WriteLine("Poblacion entrante "+ population.Count);
@@ -260,6 +301,10 @@ namespace Van_Gogh_Evolucional
             List<Bitmap> uglyDucks = null;
             List<Bitmap> newGeneration = null;
             Random randomGenerator = new Random();
+            int cromosomesCount = cromosomesCounter;
+            int tenPercentIndicator = (int)((size * amount) * 0.1);
+            Console.WriteLine("Cuantos procesados: " + cromosomesCount + " y 10% es: " + tenPercentIndicator);
+
             if (cont < amount)
             {
                 List<List<Bitmap>> bestAndWorstImgs= getBestAndWorstImgs(population, histogramID, distanceID);
@@ -270,9 +315,19 @@ namespace Van_Gogh_Evolucional
 
                 newGeneration = new List<Bitmap>();
 
-                string nombre = "imagen_" + 1 + "_pobl_" + cont;
-                //currentDaughter.Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
-                bestParents[0].Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
+                //Saving the fittest.
+                if (cromosomesCount >= tenPercentIndicator)
+                {
+                    Console.WriteLine("Entro a guardar en generacion: " + cont);
+                    int howMuchToSave = cromosomesCount / tenPercentIndicator;
+                    for (int i = 0; i < howMuchToSave ; i++)
+                    {
+                        string nombre = "imagen_" + i + "_pobl_" + cont;
+                        //currentDaughter.Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
+                        bestParents[i].Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
+                        cromosomesCount = 0;
+                    }
+                }
 
                 for (int i = 0; i < uglyDucks.Count; i++)
                 {
@@ -316,10 +371,11 @@ namespace Van_Gogh_Evolucional
                         }
                     }
                 }
-                Console.WriteLine("Salio con una nueva generacion de "+newGeneration.Count);
+                cromosomesCount += size;
+                Console.WriteLine("Salio con una nueva generacion de " + newGeneration.Count);
                 Console.WriteLine("==============================================================================================================");
                 cont++;
-                paintImage(histogramID,distanceID, newGeneration, cont);
+                paintImage(histogramID,distanceID, newGeneration, cont , cromosomesCount);
             }
             /*Aquí va:
               - La transición de las generaciones

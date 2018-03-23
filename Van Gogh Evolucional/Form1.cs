@@ -161,12 +161,12 @@ namespace Van_Gogh_Evolucional
                 if (ckBoxManhattan.Checked)
                 {
                     //vChamber.getBestAndWorstImgs(population,1,1);
-                    vChamber.paintImage(1, 1,population,0);
+                    vChamber.paintImage(1, 1,population,0 , size);
                 }
                 else
                 {
                     //vChamber.getBestAndWorstImgs(population, 1, 2);
-                    vChamber.paintImage(1, 2,population,0);
+                    vChamber.paintImage(1, 2,population,0 , size);
                 }
             }
             if(ckBoxLBPHistogram.Checked)
@@ -174,12 +174,12 @@ namespace Van_Gogh_Evolucional
                 if (ckBoxManhattan.Checked)
                 {
                     //vChamber.getBestAndWorstImgs(population, 2, 1);
-                    vChamber.paintImage(2, 1, population, 0);
+                    vChamber.paintImage(2, 1, population, 0 , size);
                 }
                 else
                 {
                     //vChamber.getBestAndWorstImgs(population, 2, 2);
-                    vChamber.paintImage(2, 2, population, 0);
+                    vChamber.paintImage(2, 2, population, 0 , size);
                 }
             }
         }
