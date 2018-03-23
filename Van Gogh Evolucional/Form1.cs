@@ -138,7 +138,7 @@ namespace Van_Gogh_Evolucional
             errorProvider1.SetError(txtb_uducks, "");
         }
 
-        private void generate(Form form)
+        private void generate()
         {
             //Generation parameters.
             int size = int.Parse(txtbox_size.Text);
@@ -186,9 +186,9 @@ namespace Van_Gogh_Evolucional
             eraseErrorMessages();
             if (validateFields())
             {
-                grafico.Series["Series"].Points.Clear();
+                
                 //generate();
-                Thread thread = new Thread(generate(this.);
+                Thread thread = new Thread(generate);
                 thread.Start();
             }
             
