@@ -89,10 +89,12 @@ namespace Van_Gogh_Evolucional
         public int siONoRazaDistance(int[] vectorOne, int[] vectorTwo)
         {
             int result = vectorOne.Length;
-            List<int> distances = new List<int>();
             for (int i = 0; i < vectorOne.Length; i++)
             {
-                result-=vectorOne[i] = vectorTwo[i];
+                if (vectorOne[i] == vectorTwo[i])
+                {
+                    result--;
+                }
             }
             return result;
         }
