@@ -183,7 +183,7 @@ namespace Van_Gogh_Evolucional
                 {
                     int prob = rand.Next(0, 255);
 
-                    if (prob<=1)
+                    if (prob==0)
                     {
                         int a = rand.Next(256);//bestColor(imageOne, imageTwo, "A", i, j);
                         int r = bestColor(imageOne, imageTwo, "R", i, j);
@@ -311,9 +311,9 @@ namespace Van_Gogh_Evolucional
             {
                 List<List<Bitmap>> bestAndWorstImgs= getBestAndWorstImgs(population, histogramID, distanceID);
                 bestParents = bestAndWorstImgs[0];
-                Console.WriteLine("Hizo los mas pros  " + bestParents.Count);
+                //Console.WriteLine("Hizo los mas pros  " + bestParents.Count);
                 uglyDucks = bestAndWorstImgs[1];
-                Console.WriteLine("Hizo los mas noobs  " + uglyDucks.Count);
+                //Console.WriteLine("Hizo los mas noobs  " + uglyDucks.Count);
 
                 newGeneration = new List<Bitmap>();
 
@@ -363,7 +363,7 @@ namespace Van_Gogh_Evolucional
                         //Mutation
                         if (rMutationProb <= mutation_prob)
                         {
-                            Console.WriteLine("Mutation generation " + cont);
+                            //Console.WriteLine("Mutation generation " + cont);
                             int luckyDude = randomGenerator.Next(0, population.Count);
                             newGeneration.Add(mutateImage(population[luckyDude], genes_prcnt));
 
