@@ -46,18 +46,18 @@ namespace Van_Gogh_Evolucional
             List<Bitmap> orderedListMin = new List<Bitmap>();
             List<Bitmap> orderedListMax = new List<Bitmap>();
             List<Bitmap> copyPopulation = new List<Bitmap>();
-            Console.WriteLine("SI LLEGO LA POBLACION " + images.Count);
+            //Console.WriteLine("SI LLEGO LA POBLACION " + images.Count);
             for (int i = 0; i < size; i++)
             {
                 copyPopulation.Add(images[i]);
             }
-            Console.WriteLine("SI LE METIO A LA VARIABLE COPYPOPULATION " + copyPopulation.Count);
+            //Console.WriteLine("SI LE METIO A LA VARIABLE COPYPOPULATION " + copyPopulation.Count);
             List<int> distances = new List<int>();
             int index = 0;
             int total = size;
             if (distanceID==1)
             {
-                Console.WriteLine(" Prueba 305454 "+copyPopulation[0].ToString());
+                //Console.WriteLine(" Prueba 305454 "+copyPopulation[0].ToString());
                 for (int i=0; i< total; i++)
                 {
                     distances.Add(distanceCalculator.intImgManhattanDistance(metaImage, copyPopulation[i],histogramID));
@@ -74,16 +74,16 @@ namespace Van_Gogh_Evolucional
             for (int x=0;x< 10; x++)
             {
                 index = distances.IndexOf(distances.Min());
-                //Console.WriteLine("Imagen con distancia min"+ distanceID+ " "+ histogramID+" " + x + ":" + distances.Min());
+                Console.WriteLine("Imagen con distancia min"+ distanceID+ " "+ histogramID+" " + x + ":" + distances.Min());
                 orderedListMin.Add(copyPopulation[index]);
                 distances.RemoveAt(index);
                 copyPopulation.RemoveAt(index);
             }
-
+            Console.WriteLine("========================================================");
             for (int x = 0; x < ugly_Ducks; x++)
             {
                 index = distances.IndexOf(distances.Max());
-                //Console.WriteLine("Imagen con distancia max" + distanceID + " " + histogramID + " " + x + ":" + distances.Max());
+                Console.WriteLine("Imagen con distancia max" + distanceID + " " + histogramID + " " + x + ":" + distances.Max());
                 orderedListMax.Add(copyPopulation[index]);
                 distances.RemoveAt(index);
                 copyPopulation.RemoveAt(index);
@@ -97,6 +97,24 @@ namespace Van_Gogh_Evolucional
         //Codes: Red[R] - Green[G] - Blue[B]  
         public int bestColor(Bitmap imageOne, Bitmap imageTwo, String colorCode,int i, int j)
         {
+
+            //ALPHA
+            if (colorCode == "A")
+            {
+                int metaPixel = metaImage.GetPixel(i, j).A;
+                int pixelOne = imageOne.GetPixel(i, j).A;
+                int pixelTwo = imageTwo.GetPixel(i, j).A;
+
+                if (Math.Abs(metaPixel - pixelOne) < Math.Abs(metaPixel - pixelTwo))
+                {
+                    return pixelOne;
+                }
+                else
+                {
+                    return pixelTwo;
+                }
+
+            }
             //Red
             if (colorCode == "R")
             {
@@ -104,10 +122,15 @@ namespace Van_Gogh_Evolucional
                 int pixelOne = imageOne.GetPixel(i, j).R;
                 int pixelTwo = imageTwo.GetPixel(i, j).R;
 
-                if ((metaPixel - pixelOne) < (metaPixel - pixelTwo))
+                if (Math.Abs(metaPixel - pixelOne) < Math.Abs(metaPixel - pixelTwo))
+                {
                     return pixelOne;
+                }
                 else
+                {
                     return pixelTwo;
+                }
+                    
             }
 
             //Green
@@ -117,10 +140,14 @@ namespace Van_Gogh_Evolucional
                 int pixelOne = imageOne.GetPixel(i, j).G;
                 int pixelTwo = imageTwo.GetPixel(i, j).G;
 
-                if ((metaPixel - pixelOne) < (metaPixel - pixelTwo))
+                if (Math.Abs(metaPixel - pixelOne) < Math.Abs(metaPixel - pixelTwo))
+                {
                     return pixelOne;
+                }
                 else
+                {
                     return pixelTwo;
+                }
             }
 
             //Blue
@@ -130,13 +157,18 @@ namespace Van_Gogh_Evolucional
                 int pixelOne = imageOne.GetPixel(i, j).B;
                 int pixelTwo = imageTwo.GetPixel(i, j).B;
 
-                if ((metaPixel - pixelOne) < (metaPixel - pixelTwo))
+                if (Math.Abs(metaPixel - pixelOne) < Math.Abs(metaPixel - pixelTwo))
+                {
                     return pixelOne;
+                }
                 else
+                {
                     return pixelTwo;
+                }
             }
             return 0;
         }
+
         public Bitmap imageCross(Bitmap imageOne , Bitmap imageTwo)
         {
             //Lógica implacable de cruce
@@ -148,11 +180,40 @@ namespace Van_Gogh_Evolucional
             {
                 for (int j = 0; j < imageOne.Width; j++)
                 {
-                    int a= 1;
-                    int r= bestColor(imageOne, imageTwo, "R", i, j);
-                    int g= bestColor(imageOne, imageTwo, "G", i, j);
-                    int b= bestColor(imageOne, imageTwo, "B", i, j);
-                    daughter.SetPixel(i, j, Color.FromArgb(a, r, g, b));
+                    int prob = rand.Next(0, 255);
+                    if (prob<=10)
+                    {
+                        int a = rand.Next(256);//bestColor(imageOne, imageTwo, "A", i, j);
+                        int r = bestColor(imageOne, imageTwo, "R", i, j);
+                        int g = bestColor(imageOne, imageTwo, "G", i, j);
+                        int b = bestColor(imageOne, imageTwo, "B", i, j);
+
+                        daughter.SetPixel(i, j, Color.FromArgb(a, r, g, b));
+                    }
+                    else
+                    {
+                        int metaPixel = metaImage.GetPixel(i, j).R + metaImage.GetPixel(i, j).G + metaImage.GetPixel(i, j).B;
+                        int pixelOne = imageOne.GetPixel(i, j).R + imageOne.GetPixel(i, j).G + imageOne.GetPixel(i, j).B;
+                        int pixelTwo = imageTwo.GetPixel(i, j).R + imageTwo.GetPixel(i, j).G + imageTwo.GetPixel(i, j).B;
+
+                        if (Math.Abs(metaPixel - pixelOne) < Math.Abs(metaPixel - pixelTwo))
+                        {
+                            int a = rand.Next(256);
+                            int r = imageOne.GetPixel(i, j).R; 
+                            int g = imageOne.GetPixel(i, j).G;
+                            int b = imageOne.GetPixel(i, j).B;
+                            daughter.SetPixel(i, j, Color.FromArgb(a, r, g, b));
+                        }
+                        else
+                        {
+                            int a = rand.Next(256);
+                            int r = imageTwo.GetPixel(i, j).R;
+                            int g = imageTwo.GetPixel(i, j).G;
+                            int b = imageTwo.GetPixel(i, j).B;
+                            daughter.SetPixel(i, j, Color.FromArgb(a, r, g, b));
+                        }
+                    }
+                    
                 }
             }
             //imageOne = imgHandler.cropAtRectangle(imageOne, 50, 100);
@@ -162,9 +223,9 @@ namespace Van_Gogh_Evolucional
             return daughter;
         }
 
-        public Bitmap mutateImage(Bitmap image , int genesPercentage)
+        public Bitmap mutateImage(Bitmap image, int genesPercentage)
         {
-            Bitmap newImage = null;
+            Bitmap newImage = image;
 
             int totalGenes = image.Width * image.Height;
             int genesToMutate = totalGenes * (genesPercentage / 100);
@@ -187,13 +248,13 @@ namespace Van_Gogh_Evolucional
                 changedPixels++;
             }
 
-
             return newImage; //mientras tanto
         }
 
         // -PENDIENTE-
         public void paintImage(int histogramID , int distanceID, List<Bitmap> population,int cont)
         {
+            Console.WriteLine("Generacion " + cont);
             Console.WriteLine("Poblacion entrante "+ population.Count);
             List<Bitmap> bestParents = null;
             List<Bitmap> uglyDucks = null;
@@ -202,7 +263,6 @@ namespace Van_Gogh_Evolucional
             if (cont < amount)
             {
                 List<List<Bitmap>> bestAndWorstImgs= getBestAndWorstImgs(population, histogramID, distanceID);
-                Console.WriteLine("Generacion  " + cont);
                 bestParents = bestAndWorstImgs[0];
                 Console.WriteLine("Hizo los mas pros  " + bestParents.Count);
                 uglyDucks = bestAndWorstImgs[1];
@@ -214,7 +274,7 @@ namespace Van_Gogh_Evolucional
                     string nombre = "imagen_" + i + "_pobl_" + cont;
                     bestParents[i].Save("e:/Analisis de Algoritmos/Pruebas/" + nombre + ".jpg");
                 }
-                for (int i=0;i< uglyDucks.Count; i++)
+                for (int i = 0; i < uglyDucks.Count; i++)
                 {
                     newGeneration.Add(uglyDucks[i]);
                 }
@@ -230,9 +290,10 @@ namespace Van_Gogh_Evolucional
                     //Cross
                     if (rCrossingProb >= cross_prob)
                     {
-                        int luckyDuck = randomGenerator.Next(0, uglyDucks.Count);
-                        int luckyParent = randomGenerator.Next(0, bestParents.Count);
-                        Bitmap currentDaughter = imageCross(bestParents[luckyParent], uglyDucks[luckyDuck]);
+                        Console.WriteLine("Cruce rikolino");
+                        int luckyDuck = randomGenerator.Next(0, population.Count);
+                        int luckyParent = randomGenerator.Next(0, population.Count);
+                        Bitmap currentDaughter = imageCross(population[luckyParent], population[luckyDuck]);
                         //string nombre = "imagen_" + contImg + "_pobl_" + cont;
                         //currentDaughter.Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
                         //currentDaughter.Save("e:/Users/Armando/Downloads/Analisis/Mejores/" + nombre + ".jpg");
@@ -242,19 +303,21 @@ namespace Van_Gogh_Evolucional
                     if (newGeneration.Count < size)
                     {
                         //Mutation
-                        if (rMutationProb >= mutation_prob)
+                        if (rMutationProb <= mutation_prob)
                         {
                             int luckyDude = randomGenerator.Next(0, population.Count);
                             newGeneration.Add(mutateImage(population[luckyDude], genes_prcnt));
+
                         }
                         if (newGeneration.Count < size)
                         {
                             //Survivors
                             newGeneration.Add(population[random]);
-                        } 
-                    } 
+                        }
+                    }
                 }
-                Console.WriteLine("Size nueva generacion "+newGeneration.Count);
+                Console.WriteLine("Salio con una nueva generacion de "+newGeneration.Count);
+                Console.WriteLine("==============================================================================================================");
                 cont++;
                 paintImage(histogramID,distanceID, newGeneration, cont);
             }
