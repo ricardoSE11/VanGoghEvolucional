@@ -181,7 +181,8 @@ namespace Van_Gogh_Evolucional
                 for (int j = 0; j < imageOne.Width; j++)
                 {
                     int prob = rand.Next(0, 255);
-                    if (prob<=2)
+
+                    if (prob<=1)
                     {
                         int a = rand.Next(256);//bestColor(imageOne, imageTwo, "A", i, j);
                         int r = bestColor(imageOne, imageTwo, "R", i, j);
@@ -284,7 +285,7 @@ namespace Van_Gogh_Evolucional
             for (int x = 0; x < images.Count ; x++)
             {
                 index = distances.IndexOf(distances.Min());
-                Console.WriteLine("Metodo bestOf: " + distanceID + " " + histogramID + " " + x + ":" + distances.Min());
+                //Console.WriteLine("Metodo bestOf: " + distanceID + " " + histogramID + " " + x + ":" + distances.Min());
                 bestDudes.Add(copyPopulation[index]);
                 distances.RemoveAt(index);
                 copyPopulation.RemoveAt(index);
@@ -360,6 +361,7 @@ namespace Van_Gogh_Evolucional
                         //Mutation
                         if (rMutationProb <= mutation_prob)
                         {
+                            Console.WriteLine("Mutation generation " + cont);
                             int luckyDude = randomGenerator.Next(0, population.Count);
                             newGeneration.Add(mutateImage(population[luckyDude], genes_prcnt));
 
