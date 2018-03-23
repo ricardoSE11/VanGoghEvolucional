@@ -188,9 +188,9 @@ namespace Van_Gogh_Evolucional
             eraseErrorMessages();
             if (validateFields())
             {
-                generate();
-                //Thread thread = new Thread(generate);
-                //thread.Start();
+                //generate();
+                Thread thread = new Thread(generate);
+                thread.Start();
             }
             
           

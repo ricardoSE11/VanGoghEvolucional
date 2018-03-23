@@ -59,8 +59,10 @@ namespace Van_Gogh_Evolucional
                 int redDistance = 0;
                 int greenDistance = 0;
                 int blueDistance = 0;
-                Console.WriteLine(" La imagen uno es " +imageOne.ToString());
-                Console.WriteLine(" La imagen dos es " + imageTwo.ToString());
+                //Random randomGenerator = new Random();
+                //imageTwo.Save("e:/Analisis de Algoritmos/Pruebas/" + randomGenerator.Next(0, 10000000) + ".jpg");
+                //Console.WriteLine(" La imagen uno es " +imageOne.ToString());
+                //Console.WriteLine(" La imagen dos es " + imageTwo.ToString());
                 List<int[]> histogramOne = histogramCalculator.getColorHistogram(imageOne);
                 List<int[]> histogramTwo = histogramCalculator.getColorHistogram(imageTwo);
 
