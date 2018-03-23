@@ -17,7 +17,7 @@ namespace Van_Gogh_Evolucional
         //Global variables
         ImageHandler imgHandler = new ImageHandler();
         ImageGenerator imgGenerator = new ImageGenerator();
-
+        
 
         public form_MainWindow()
         {
@@ -52,9 +52,7 @@ namespace Van_Gogh_Evolucional
             Bitmap resizedImg = imgHandler.resizeImgWithChoosingQuality((Bitmap)this.picBox_metaImage.Image, 100 , 100 , 1080);
             //Blur metaImage.
             resizedImg = imgHandler.blurFilter(resizedImg, 5);
-            //Display the image.
-            picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            picBox_generatedImage.Image = resizedImg;
+            
         }
 
         private void btn_PremioNobel_Click(object sender, EventArgs e)
@@ -69,9 +67,7 @@ namespace Van_Gogh_Evolucional
             randomImage = imgHandler.cropAtRectangle(randomImage, 50, 100);
             result = imgHandler.concatenateBitmaps(randomImage, loadedImage);
             result = imgHandler.resizeImage(result, 100, 100);
-            picBox_generatedImage.BackgroundImage = null;
-            picBox_generatedImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            picBox_generatedImage.Image = result; //randomImage;
+            
 
         }
 
@@ -142,7 +138,7 @@ namespace Van_Gogh_Evolucional
             errorProvider1.SetError(txtb_uducks, "");
         }
 
-        private void generate()
+        private void generate(Form form)
         {
             //Generation parameters.
             int size = int.Parse(txtbox_size.Text);
@@ -162,6 +158,7 @@ namespace Van_Gogh_Evolucional
                 {
                     //vChamber.getBestAndWorstImgs(population,1,1);
                     vChamber.paintImage(1, 1,population,0 , size);
+                    
                 }
                 else
                 {
@@ -189,8 +186,9 @@ namespace Van_Gogh_Evolucional
             eraseErrorMessages();
             if (validateFields())
             {
+                grafico.Series["Series"].Points.Clear();
                 //generate();
-                Thread thread = new Thread(generate);
+                Thread thread = new Thread(generate(this.);
                 thread.Start();
             }
             
@@ -208,6 +206,16 @@ namespace Van_Gogh_Evolucional
         }
 
         private void ckBoxLBPHistogram_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void grafico_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckBoxColorHistogram_CheckedChanged(object sender, EventArgs e)
         {
 
         }

@@ -19,6 +19,7 @@ namespace Van_Gogh_Evolucional
         int ugly_Ducks;
         int amount;
         int size;
+
         //Constructors
         public VariabilityChamber()
         {}
@@ -324,8 +325,8 @@ namespace Van_Gogh_Evolucional
                     for (int i = 0; i < howMuchToSave ; i++)
                     {
                         string nombre = "imagen_" + i + "_pobl_" + cont;
-                        //currentDaughter.Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
-                        bestParents[i].Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
+                        
+                        bestParents[i].Save("c:/Users/Armando/Downloads/Analisis/Mejores/" + nombre + ".jpg");
                         cromosomesCount = 0;
                     }
                 }
@@ -354,6 +355,7 @@ namespace Van_Gogh_Evolucional
                         //currentDaughter.Save("e:/Users/rshum/Pictures/VanGoghEvolucional/MasAptos/" + nombre + ".jpg");
                         //currentDaughter.Save("e:/Users/Armando/Downloads/Analisis/Mejores/" + nombre + ".jpg");
                         //currentDaughter.Save("e:/Analisis de Algoritmos/Pruebas/" + nombre + ".jpg");
+                        
                         newGeneration.Add(currentDaughter);
                     }
                     if (newGeneration.Count < size)
